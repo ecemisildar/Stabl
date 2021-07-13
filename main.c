@@ -13,7 +13,6 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */
-#include <string.h>
 #include "ch.h"
 #include "hal.h"
 #include "rt_test_root.h"
