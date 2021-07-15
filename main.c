@@ -1,7 +1,5 @@
 #include "ch.h"
 #include "hal.h"
-#include "rt_test_root.h"
-#include "oslib_test_root.h"
 #include "hal_mfs.h"
 #include "mfs_test_root.h"
 
