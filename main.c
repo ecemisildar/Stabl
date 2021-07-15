@@ -2,9 +2,8 @@
 #include "hal.h"
 #include "hal_mfs.h"
 #include "chprintf.h"
-//#include "mfs_test_root.h"
+#include "mfs_test_root.h"
 
-MFSDriver mfs1;
 const MFSConfig mfscfg1 = {
   .flashp           = (BaseFlash *)&EFLD1,
   .erased           = 0xFFFFFFFFU,
@@ -27,9 +26,7 @@ static THD_FUNCTION(Thread1, arg) {
     chThdSleepMilliseconds(500);
   }
 }
-const uint8_t mfs_pattern16[16] = {
-  0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
-};
+
 int main(void) {
 
   halInit();
@@ -38,17 +35,21 @@ int main(void) {
   sdStart(&SD2, NULL);
   BaseSequentialStream *stream = (BaseSequentialStream *)&SD2;
   chThdCreateStatic(waThread1, sizeof(waThread1), NORMALPRIO, Thread1, NULL);
-
+  mfsStart(&mfs1, &mfscfg1);
   mfs_error_t err;
+  size_t size;
 
+      size = sizeof mfs_buffer;
   err = mfsWriteRecord(&mfs1, 1, sizeof mfs_pattern16, mfs_pattern16);
   if(err != MFS_NO_ERROR){chprintf(stream, "error creating record 1");}
-  /*while (true) {
+  err = mfsReadRecord(&mfs1, 1, &size, mfs_buffer);
+  if(err != MFS_NO_ERROR){chprintf(stream, "record not found");}
+  while (true) {
     if (!palReadLine(LINE_BUTTON)) {
       test_execute((BaseSequentialStream *)&SD2, &mfs_test_suite);
     }
     chThdSleepMilliseconds(500);
-  }*/
+  }
 }
 
 
