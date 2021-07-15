@@ -46,8 +46,9 @@ int main(void) {
   if(err != MFS_NO_ERROR){chprintf(stream, "record not found");}
   if(size != sizeof mfs_pattern16){chprintf(stream, "unexpected record length");}
   if(memcmp(mfs_pattern16, mfs_buffer, size) != 0){chprintf(stream, "wrong record content");}
+
   for(int i=0; i<16; i++){
-  chprintf(stream, "%d",mfs_buffer[i]);
+  chprintf(stream, "Buffer: %d",mfs_buffer[i]);
   }
   while (true) {
     if (!palReadLine(LINE_BUTTON)) {
