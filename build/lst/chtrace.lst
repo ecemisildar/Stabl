@@ -1,0 +1,2828 @@
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 6
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"chtrace.c"
+  12              		.file 1 "c:\\chibistudio\\tools\\gnu tools arm embedded\\9.0 2019q4\\lib\\gcc\\arm-none-eabi\\9.2.
+  13              		.file 2 "c:\\chibistudio\\tools\\gnu tools arm embedded\\9.0 2019q4\\arm-none-eabi\\include\\machi
+  14              		.file 3 "c:\\chibistudio\\tools\\gnu tools arm embedded\\9.0 2019q4\\arm-none-eabi\\include\\sys\\
+  15              		.file 4 "../../chibios203/os/common/ports/ARMCMx/compilers/GCC/chtypes.h"
+  16              		.file 5 "../../chibios203/os/rt/include/chsystypes.h"
+  17              		.file 6 "../../chibios203/os/rt/include/chschd.h"
+  18              		.file 7 "../../chibios203/os/rt/include/chtime.h"
+  19              		.file 8 "../../chibios203/os/common/ext/ARM/CMSIS/Core/Include/core_cm4.h"
+  20              		.file 9 "../../chibios203/os/common/ext/ST/STM32L4xx/system_stm32l4xx.h"
+  21              		.file 10 "../../chibios203/os/common/ports/ARMCMx/chcore.h"
+  22              		.file 11 "../../chibios203/os/common/ports/ARMCMx/chcore_v7m.h"
+  23              		.file 12 "../../chibios203/os/rt/include/chtm.h"
+  24              		.file 13 "../../chibios203/os/rt/include/chsem.h"
+  25              		.file 14 "../../chibios203/os/rt/include/chmtx.h"
+  26              		.file 15 "../../chibios203/os/rt/include/chsys.h"
+  27              		.file 16 "../../chibios203/os/rt/include/chregistry.h"
+  28              		.file 17 "../../chibios203/os/oslib/include/chmemcore.h"
+  29              		.file 18 "../../chibios203/os/oslib/include/chmempools.h"
+  30              		.file 19 "../../chibios203/os/oslib/include/chfactory.h"
+  31              		.section	.gnu.debuglto_.debug_info,"e",%progbits
+  32              	.Ldebug_info0:
+  33              		.hidden	chtrace.c.24cd0ab8
+  34              		.weak	chtrace.c.24cd0ab8
+  35              	chtrace.c.24cd0ab8:
+  36 0000 5E0A0000 		.4byte	0xa5e
+  37 0004 0400     		.2byte	0x4
+  38 0006 00000000 		.4byte	.Ldebug_abbrev0
+  39 000a 04       		.byte	0x4
+  40 000b 01       		.uleb128 0x1
+  41 000c DC020000 		.4byte	.LASF145
+  42 0010 0C       		.byte	0xc
+  43 0011 73000000 		.4byte	.LASF146
+  44 0015 3F020000 		.4byte	.LASF147
+  45 0019 00000000 		.4byte	.Ldebug_line0
+  46 001d 02       		.uleb128 0x2
+  47 001e 04       		.byte	0x4
+  48 001f 05       		.byte	0x5
+  49 0020 696E7400 		.ascii	"int\000"
+  50 0024 03       		.uleb128 0x3
+  51 0025 0D000000 		.4byte	.LASF4
+  52 0029 01       		.byte	0x1
+  53 002a D1       		.byte	0xd1
+  54 002b 17       		.byte	0x17
+  55 002c 30000000 		.4byte	0x30
+  56 0030 04       		.uleb128 0x4
+  57 0031 04       		.byte	0x4
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 2
+
+
+  58 0032 07       		.byte	0x7
+  59 0033 F7010000 		.4byte	.LASF0
+  60 0037 04       		.uleb128 0x4
+  61 0038 08       		.byte	0x8
+  62 0039 05       		.byte	0x5
+  63 003a 12010000 		.4byte	.LASF1
+  64 003e 04       		.uleb128 0x4
+  65 003f 08       		.byte	0x8
+  66 0040 04       		.byte	0x4
+  67 0041 51040000 		.4byte	.LASF2
+  68 0045 04       		.uleb128 0x4
+  69 0046 01       		.byte	0x1
+  70 0047 06       		.byte	0x6
+  71 0048 20010000 		.4byte	.LASF3
+  72 004c 03       		.uleb128 0x3
+  73 004d 2A000000 		.4byte	.LASF5
+  74 0051 02       		.byte	0x2
+  75 0052 2B       		.byte	0x2b
+  76 0053 18       		.byte	0x18
+  77 0054 58000000 		.4byte	0x58
+  78 0058 04       		.uleb128 0x4
+  79 0059 01       		.byte	0x1
+  80 005a 08       		.byte	0x8
+  81 005b 09050000 		.4byte	.LASF6
+  82 005f 04       		.uleb128 0x4
+  83 0060 02       		.byte	0x2
+  84 0061 05       		.byte	0x5
+  85 0062 2D050000 		.4byte	.LASF7
+  86 0066 03       		.uleb128 0x3
+  87 0067 04060000 		.4byte	.LASF8
+  88 006b 02       		.byte	0x2
+  89 006c 39       		.byte	0x39
+  90 006d 19       		.byte	0x19
+  91 006e 72000000 		.4byte	0x72
+  92 0072 04       		.uleb128 0x4
+  93 0073 02       		.byte	0x2
+  94 0074 07       		.byte	0x7
+  95 0075 5A060000 		.4byte	.LASF9
+  96 0079 03       		.uleb128 0x3
+  97 007a F3030000 		.4byte	.LASF10
+  98 007e 02       		.byte	0x2
+  99 007f 4D       		.byte	0x4d
+ 100 0080 18       		.byte	0x18
+ 101 0081 85000000 		.4byte	0x85
+ 102 0085 04       		.uleb128 0x4
+ 103 0086 04       		.byte	0x4
+ 104 0087 05       		.byte	0x5
+ 105 0088 4D010000 		.4byte	.LASF11
+ 106 008c 03       		.uleb128 0x3
+ 107 008d 96010000 		.4byte	.LASF12
+ 108 0091 02       		.byte	0x2
+ 109 0092 4F       		.byte	0x4f
+ 110 0093 19       		.byte	0x19
+ 111 0094 98000000 		.4byte	0x98
+ 112 0098 04       		.uleb128 0x4
+ 113 0099 04       		.byte	0x4
+ 114 009a 07       		.byte	0x7
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 3
+
+
+ 115 009b D7050000 		.4byte	.LASF13
+ 116 009f 03       		.uleb128 0x3
+ 117 00a0 A7040000 		.4byte	.LASF14
+ 118 00a4 02       		.byte	0x2
+ 119 00a5 69       		.byte	0x69
+ 120 00a6 19       		.byte	0x19
+ 121 00a7 AB000000 		.4byte	0xab
+ 122 00ab 04       		.uleb128 0x4
+ 123 00ac 08       		.byte	0x8
+ 124 00ad 07       		.byte	0x7
+ 125 00ae 98000000 		.4byte	.LASF15
+ 126 00b2 03       		.uleb128 0x3
+ 127 00b3 C7060000 		.4byte	.LASF16
+ 128 00b7 03       		.byte	0x3
+ 129 00b8 18       		.byte	0x18
+ 130 00b9 13       		.byte	0x13
+ 131 00ba 4C000000 		.4byte	0x4c
+ 132 00be 05       		.uleb128 0x5
+ 133 00bf B2000000 		.4byte	0xb2
+ 134 00c3 03       		.uleb128 0x3
+ 135 00c4 77010000 		.4byte	.LASF17
+ 136 00c8 03       		.byte	0x3
+ 137 00c9 24       		.byte	0x24
+ 138 00ca 14       		.byte	0x14
+ 139 00cb 66000000 		.4byte	0x66
+ 140 00cf 03       		.uleb128 0x3
+ 141 00d0 01050000 		.4byte	.LASF18
+ 142 00d4 03       		.byte	0x3
+ 143 00d5 2C       		.byte	0x2c
+ 144 00d6 13       		.byte	0x13
+ 145 00d7 79000000 		.4byte	0x79
+ 146 00db 06       		.uleb128 0x6
+ 147 00dc CF000000 		.4byte	0xcf
+ 148 00e0 03       		.uleb128 0x3
+ 149 00e1 B1050000 		.4byte	.LASF19
+ 150 00e5 03       		.byte	0x3
+ 151 00e6 30       		.byte	0x30
+ 152 00e7 14       		.byte	0x14
+ 153 00e8 8C000000 		.4byte	0x8c
+ 154 00ec 05       		.uleb128 0x5
+ 155 00ed E0000000 		.4byte	0xe0
+ 156 00f1 03       		.uleb128 0x3
+ 157 00f2 21000000 		.4byte	.LASF20
+ 158 00f6 03       		.byte	0x3
+ 159 00f7 3C       		.byte	0x3c
+ 160 00f8 14       		.byte	0x14
+ 161 00f9 9F000000 		.4byte	0x9f
+ 162 00fd 03       		.uleb128 0x3
+ 163 00fe 1F040000 		.4byte	.LASF21
+ 164 0102 04       		.byte	0x4
+ 165 0103 27       		.byte	0x27
+ 166 0104 1D       		.byte	0x1d
+ 167 0105 E0000000 		.4byte	0xe0
+ 168 0109 03       		.uleb128 0x3
+ 169 010a C3030000 		.4byte	.LASF22
+ 170 010e 04       		.byte	0x4
+ 171 010f 2A       		.byte	0x2a
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 4
+
+
+ 172 0110 1D       		.byte	0x1d
+ 173 0111 B2000000 		.4byte	0xb2
+ 174 0115 03       		.uleb128 0x3
+ 175 0116 56010000 		.4byte	.LASF23
+ 176 011a 04       		.byte	0x4
+ 177 011b 2B       		.byte	0x2b
+ 178 011c 1D       		.byte	0x1d
+ 179 011d B2000000 		.4byte	0xb2
+ 180 0121 03       		.uleb128 0x3
+ 181 0122 BC040000 		.4byte	.LASF24
+ 182 0126 04       		.byte	0x4
+ 183 0127 2C       		.byte	0x2c
+ 184 0128 1D       		.byte	0x1d
+ 185 0129 B2000000 		.4byte	0xb2
+ 186 012d 03       		.uleb128 0x3
+ 187 012e E8040000 		.4byte	.LASF25
+ 188 0132 04       		.byte	0x4
+ 189 0133 2E       		.byte	0x2e
+ 190 0134 1D       		.byte	0x1d
+ 191 0135 E0000000 		.4byte	0xe0
+ 192 0139 03       		.uleb128 0x3
+ 193 013a A7020000 		.4byte	.LASF26
+ 194 013e 04       		.byte	0x4
+ 195 013f 2F       		.byte	0x2f
+ 196 0140 1D       		.byte	0x1d
+ 197 0141 CF000000 		.4byte	0xcf
+ 198 0145 03       		.uleb128 0x3
+ 199 0146 D9030000 		.4byte	.LASF27
+ 200 014a 04       		.byte	0x4
+ 201 014b 31       		.byte	0x31
+ 202 014c 1D       		.byte	0x1d
+ 203 014d E0000000 		.4byte	0xe0
+ 204 0151 03       		.uleb128 0x3
+ 205 0152 F1010000 		.4byte	.LASF28
+ 206 0156 04       		.byte	0x4
+ 207 0157 33       		.byte	0x33
+ 208 0158 1D       		.byte	0x1d
+ 209 0159 CF000000 		.4byte	0xcf
+ 210 015d 03       		.uleb128 0x3
+ 211 015e AD020000 		.4byte	.LASF29
+ 212 0162 04       		.byte	0x4
+ 213 0163 34       		.byte	0x34
+ 214 0164 1D       		.byte	0x1d
+ 215 0165 E0000000 		.4byte	0xe0
+ 216 0169 03       		.uleb128 0x3
+ 217 016a 0F060000 		.4byte	.LASF30
+ 218 016e 05       		.byte	0x5
+ 219 016f 34       		.byte	0x34
+ 220 0170 1A       		.byte	0x1a
+ 221 0171 75010000 		.4byte	0x175
+ 222 0175 07       		.uleb128 0x7
+ 223 0176 9D020000 		.4byte	.LASF48
+ 224 017a 44       		.byte	0x44
+ 225 017b 06       		.byte	0x6
+ 226 017c 8E       		.byte	0x8e
+ 227 017d 08       		.byte	0x8
+ 228 017e 65020000 		.4byte	0x265
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 5
+
+
+ 229 0182 08       		.uleb128 0x8
+ 230 0183 7A020000 		.4byte	.LASF31
+ 231 0187 06       		.byte	0x6
+ 232 0188 8F       		.byte	0x8f
+ 233 0189 19       		.byte	0x19
+ 234 018a 9E020000 		.4byte	0x29e
+ 235 018e 00       		.byte	0
+ 236 018f 08       		.uleb128 0x8
+ 237 0190 91040000 		.4byte	.LASF32
+ 238 0194 06       		.byte	0x6
+ 239 0195 90       		.byte	0x90
+ 240 0196 19       		.byte	0x19
+ 241 0197 2D010000 		.4byte	0x12d
+ 242 019b 08       		.byte	0x8
+ 243 019c 09       		.uleb128 0x9
+ 244 019d 63747800 		.ascii	"ctx\000"
+ 245 01a1 06       		.byte	0x6
+ 246 01a2 91       		.byte	0x91
+ 247 01a3 19       		.byte	0x19
+ 248 01a4 C3050000 		.4byte	0x5c3
+ 249 01a8 0C       		.byte	0xc
+ 250 01a9 08       		.uleb128 0x8
+ 251 01aa 08040000 		.4byte	.LASF33
+ 252 01ae 06       		.byte	0x6
+ 253 01af 93       		.byte	0x93
+ 254 01b0 1A       		.byte	0x1a
+ 255 01b1 71020000 		.4byte	0x271
+ 256 01b5 10       		.byte	0x10
+ 257 01b6 08       		.uleb128 0x8
+ 258 01b7 F5050000 		.4byte	.LASF34
+ 259 01bb 06       		.byte	0x6
+ 260 01bc 94       		.byte	0x94
+ 261 01bd 1A       		.byte	0x1a
+ 262 01be 71020000 		.4byte	0x271
+ 263 01c2 14       		.byte	0x14
+ 264 01c3 08       		.uleb128 0x8
+ 265 01c4 98020000 		.4byte	.LASF35
+ 266 01c8 06       		.byte	0x6
+ 267 01c9 9B       		.byte	0x9b
+ 268 01ca 1A       		.byte	0x1a
+ 269 01cb E2060000 		.4byte	0x6e2
+ 270 01cf 18       		.byte	0x18
+ 271 01d0 08       		.uleb128 0x8
+ 272 01d1 E9050000 		.4byte	.LASF36
+ 273 01d5 06       		.byte	0x6
+ 274 01d6 A4       		.byte	0xa4
+ 275 01d7 1A       		.byte	0x1a
+ 276 01d8 F9060000 		.4byte	0x6f9
+ 277 01dc 1C       		.byte	0x1c
+ 278 01dd 08       		.uleb128 0x8
+ 279 01de 47010000 		.4byte	.LASF37
+ 280 01e2 06       		.byte	0x6
+ 281 01e3 A9       		.byte	0xa9
+ 282 01e4 19       		.byte	0x19
+ 283 01e5 15010000 		.4byte	0x115
+ 284 01e9 20       		.byte	0x20
+ 285 01ea 08       		.uleb128 0x8
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 6
+
+
+ 286 01eb CF060000 		.4byte	.LASF38
+ 287 01ef 06       		.byte	0x6
+ 288 01f0 AD       		.byte	0xad
+ 289 01f1 19       		.byte	0x19
+ 290 01f2 09010000 		.4byte	0x109
+ 291 01f6 21       		.byte	0x21
+ 292 01f7 08       		.uleb128 0x8
+ 293 01f8 C4040000 		.4byte	.LASF39
+ 294 01fc 06       		.byte	0x6
+ 295 01fd B2       		.byte	0xb2
+ 296 01fe 19       		.byte	0x19
+ 297 01ff 21010000 		.4byte	0x121
+ 298 0203 22       		.byte	0x22
+ 299 0204 0A       		.uleb128 0xa
+ 300 0205 7500     		.ascii	"u\000"
+ 301 0207 06       		.byte	0x6
+ 302 0208 0301     		.2byte	0x103
+ 303 020a 19       		.byte	0x19
+ 304 020b 08060000 		.4byte	0x608
+ 305 020f 24       		.byte	0x24
+ 306 0210 0B       		.uleb128 0xb
+ 307 0211 BA010000 		.4byte	.LASF40
+ 308 0215 06       		.byte	0x6
+ 309 0216 0801     		.2byte	0x108
+ 310 0218 19       		.byte	0x19
+ 311 0219 77020000 		.4byte	0x277
+ 312 021d 28       		.byte	0x28
+ 313 021e 0B       		.uleb128 0xb
+ 314 021f 3E010000 		.4byte	.LASF41
+ 315 0223 06       		.byte	0x6
+ 316 0224 0E01     		.2byte	0x10e
+ 317 0226 19       		.byte	0x19
+ 318 0227 9E020000 		.4byte	0x29e
+ 319 022b 2C       		.byte	0x2c
+ 320 022c 0B       		.uleb128 0xb
+ 321 022d B4020000 		.4byte	.LASF42
+ 322 0231 06       		.byte	0x6
+ 323 0232 1401     		.2byte	0x114
+ 324 0234 19       		.byte	0x19
+ 325 0235 45010000 		.4byte	0x145
+ 326 0239 34       		.byte	0x34
+ 327 023a 0B       		.uleb128 0xb
+ 328 023b 1B070000 		.4byte	.LASF43
+ 329 023f 06       		.byte	0x6
+ 330 0240 1B01     		.2byte	0x11b
+ 331 0242 1A       		.byte	0x1a
+ 332 0243 DC060000 		.4byte	0x6dc
+ 333 0247 38       		.byte	0x38
+ 334 0248 0B       		.uleb128 0xb
+ 335 0249 0E040000 		.4byte	.LASF44
+ 336 024d 06       		.byte	0x6
+ 337 024e 1F01     		.2byte	0x11f
+ 338 0250 19       		.byte	0x19
+ 339 0251 2D010000 		.4byte	0x12d
+ 340 0255 3C       		.byte	0x3c
+ 341 0256 0B       		.uleb128 0xb
+ 342 0257 80020000 		.4byte	.LASF45
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 7
+
+
+ 343 025b 06       		.byte	0x6
+ 344 025c 2601     		.2byte	0x126
+ 345 025e 1A       		.byte	0x1a
+ 346 025f 5E030000 		.4byte	0x35e
+ 347 0263 40       		.byte	0x40
+ 348 0264 00       		.byte	0
+ 349 0265 03       		.uleb128 0x3
+ 350 0266 27040000 		.4byte	.LASF46
+ 351 026a 05       		.byte	0x5
+ 352 026b 39       		.byte	0x39
+ 353 026c 14       		.byte	0x14
+ 354 026d 71020000 		.4byte	0x271
+ 355 0271 0C       		.uleb128 0xc
+ 356 0272 04       		.byte	0x4
+ 357 0273 69010000 		.4byte	0x169
+ 358 0277 03       		.uleb128 0x3
+ 359 0278 E6060000 		.4byte	.LASF47
+ 360 027c 05       		.byte	0x5
+ 361 027d 3E       		.byte	0x3e
+ 362 027e 20       		.byte	0x20
+ 363 027f 83020000 		.4byte	0x283
+ 364 0283 07       		.uleb128 0x7
+ 365 0284 C1050000 		.4byte	.LASF49
+ 366 0288 04       		.byte	0x4
+ 367 0289 06       		.byte	0x6
+ 368 028a 7C       		.byte	0x7c
+ 369 028b 08       		.byte	0x8
+ 370 028c 9E020000 		.4byte	0x29e
+ 371 0290 08       		.uleb128 0x8
+ 372 0291 FC000000 		.4byte	.LASF50
+ 373 0295 06       		.byte	0x6
+ 374 0296 7D       		.byte	0x7d
+ 375 0297 1A       		.byte	0x1a
+ 376 0298 71020000 		.4byte	0x271
+ 377 029c 00       		.byte	0
+ 378 029d 00       		.byte	0
+ 379 029e 03       		.uleb128 0x3
+ 380 029f 94060000 		.4byte	.LASF51
+ 381 02a3 05       		.byte	0x5
+ 382 02a4 45       		.byte	0x45
+ 383 02a5 21       		.byte	0x21
+ 384 02a6 AA020000 		.4byte	0x2aa
+ 385 02aa 07       		.uleb128 0x7
+ 386 02ab 01010000 		.4byte	.LASF52
+ 387 02af 08       		.byte	0x8
+ 388 02b0 06       		.byte	0x6
+ 389 02b1 83       		.byte	0x83
+ 390 02b2 08       		.byte	0x8
+ 391 02b3 D2020000 		.4byte	0x2d2
+ 392 02b7 08       		.uleb128 0x8
+ 393 02b8 FC000000 		.4byte	.LASF50
+ 394 02bc 06       		.byte	0x6
+ 395 02bd 84       		.byte	0x84
+ 396 02be 1A       		.byte	0x1a
+ 397 02bf 71020000 		.4byte	0x271
+ 398 02c3 00       		.byte	0
+ 399 02c4 08       		.uleb128 0x8
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 8
+
+
+ 400 02c5 34000000 		.4byte	.LASF53
+ 401 02c9 06       		.byte	0x6
+ 402 02ca 85       		.byte	0x85
+ 403 02cb 1A       		.byte	0x1a
+ 404 02cc 71020000 		.4byte	0x271
+ 405 02d0 04       		.byte	0x4
+ 406 02d1 00       		.byte	0
+ 407 02d2 03       		.uleb128 0x3
+ 408 02d3 00000000 		.4byte	.LASF54
+ 409 02d7 05       		.byte	0x5
+ 410 02d8 4C       		.byte	0x4c
+ 411 02d9 1E       		.byte	0x1e
+ 412 02da DE020000 		.4byte	0x2de
+ 413 02de 0D       		.uleb128 0xd
+ 414 02df CB030000 		.4byte	.LASF55
+ 415 02e3 1C       		.byte	0x1c
+ 416 02e4 06       		.byte	0x6
+ 417 02e5 5E01     		.2byte	0x15e
+ 418 02e7 08       		.byte	0x8
+ 419 02e8 41030000 		.4byte	0x341
+ 420 02ec 0B       		.uleb128 0xb
+ 421 02ed 7A020000 		.4byte	.LASF31
+ 422 02f1 06       		.byte	0x6
+ 423 02f2 5F01     		.2byte	0x15f
+ 424 02f4 19       		.byte	0x19
+ 425 02f5 9E020000 		.4byte	0x29e
+ 426 02f9 00       		.byte	0
+ 427 02fa 0B       		.uleb128 0xb
+ 428 02fb 91040000 		.4byte	.LASF32
+ 429 02ff 06       		.byte	0x6
+ 430 0300 6001     		.2byte	0x160
+ 431 0302 19       		.byte	0x19
+ 432 0303 2D010000 		.4byte	0x12d
+ 433 0307 08       		.byte	0x8
+ 434 0308 0A       		.uleb128 0xa
+ 435 0309 63747800 		.ascii	"ctx\000"
+ 436 030d 06       		.byte	0x6
+ 437 030e 6201     		.2byte	0x162
+ 438 0310 19       		.byte	0x19
+ 439 0311 C3050000 		.4byte	0x5c3
+ 440 0315 0C       		.byte	0xc
+ 441 0316 0B       		.uleb128 0xb
+ 442 0317 08040000 		.4byte	.LASF33
+ 443 031b 06       		.byte	0x6
+ 444 031c 6501     		.2byte	0x165
+ 445 031e 1A       		.byte	0x1a
+ 446 031f 71020000 		.4byte	0x271
+ 447 0323 10       		.byte	0x10
+ 448 0324 0B       		.uleb128 0xb
+ 449 0325 F5050000 		.4byte	.LASF34
+ 450 0329 06       		.byte	0x6
+ 451 032a 6601     		.2byte	0x166
+ 452 032c 1A       		.byte	0x1a
+ 453 032d 71020000 		.4byte	0x271
+ 454 0331 14       		.byte	0x14
+ 455 0332 0B       		.uleb128 0xb
+ 456 0333 9F040000 		.4byte	.LASF56
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 9
+
+
+ 457 0337 06       		.byte	0x6
+ 458 0338 6901     		.2byte	0x169
+ 459 033a 1A       		.byte	0x1a
+ 460 033b 71020000 		.4byte	0x271
+ 461 033f 18       		.byte	0x18
+ 462 0340 00       		.byte	0
+ 463 0341 03       		.uleb128 0x3
+ 464 0342 2D060000 		.4byte	.LASF57
+ 465 0346 05       		.byte	0x5
+ 466 0347 51       		.byte	0x51
+ 467 0348 10       		.byte	0x10
+ 468 0349 4D030000 		.4byte	0x34d
+ 469 034d 0C       		.uleb128 0xc
+ 470 034e 04       		.byte	0x4
+ 471 034f 53030000 		.4byte	0x353
+ 472 0353 0E       		.uleb128 0xe
+ 473 0354 5E030000 		.4byte	0x35e
+ 474 0358 0F       		.uleb128 0xf
+ 475 0359 5E030000 		.4byte	0x35e
+ 476 035d 00       		.byte	0
+ 477 035e 10       		.uleb128 0x10
+ 478 035f 04       		.byte	0x4
+ 479 0360 03       		.uleb128 0x3
+ 480 0361 C9040000 		.4byte	.LASF58
+ 481 0365 05       		.byte	0x5
+ 482 0366 56       		.byte	0x56
+ 483 0367 21       		.byte	0x21
+ 484 0368 6C030000 		.4byte	0x36c
+ 485 036c 0D       		.uleb128 0xd
+ 486 036d 65050000 		.4byte	.LASF59
+ 487 0371 14       		.byte	0x14
+ 488 0372 06       		.byte	0x6
+ 489 0373 3901     		.2byte	0x139
+ 490 0375 08       		.byte	0x8
+ 491 0376 C1030000 		.4byte	0x3c1
+ 492 037a 0B       		.uleb128 0xb
+ 493 037b FC000000 		.4byte	.LASF50
+ 494 037f 06       		.byte	0x6
+ 495 0380 3A01     		.2byte	0x13a
+ 496 0382 1A       		.byte	0x1a
+ 497 0383 FF060000 		.4byte	0x6ff
+ 498 0387 00       		.byte	0
+ 499 0388 0B       		.uleb128 0xb
+ 500 0389 34000000 		.4byte	.LASF53
+ 501 038d 06       		.byte	0x6
+ 502 038e 3B01     		.2byte	0x13b
+ 503 0390 1A       		.byte	0x1a
+ 504 0391 FF060000 		.4byte	0x6ff
+ 505 0395 04       		.byte	0x4
+ 506 0396 0B       		.uleb128 0xb
+ 507 0397 14000000 		.4byte	.LASF60
+ 508 039b 06       		.byte	0x6
+ 509 039c 3C01     		.2byte	0x13c
+ 510 039e 19       		.byte	0x19
+ 511 039f A9040000 		.4byte	0x4a9
+ 512 03a3 08       		.byte	0x8
+ 513 03a4 0B       		.uleb128 0xb
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 10
+
+
+ 514 03a5 5F010000 		.4byte	.LASF61
+ 515 03a9 06       		.byte	0x6
+ 516 03aa 3D01     		.2byte	0x13d
+ 517 03ac 19       		.byte	0x19
+ 518 03ad 41030000 		.4byte	0x341
+ 519 03b1 0C       		.byte	0xc
+ 520 03b2 0A       		.uleb128 0xa
+ 521 03b3 70617200 		.ascii	"par\000"
+ 522 03b7 06       		.byte	0x6
+ 523 03b8 3F01     		.2byte	0x13f
+ 524 03ba 1A       		.byte	0x1a
+ 525 03bb 5E030000 		.4byte	0x35e
+ 526 03bf 10       		.byte	0x10
+ 527 03c0 00       		.byte	0
+ 528 03c1 03       		.uleb128 0x3
+ 529 03c2 CB000000 		.4byte	.LASF62
+ 530 03c6 05       		.byte	0x5
+ 531 03c7 5B       		.byte	0x5b
+ 532 03c8 28       		.byte	0x28
+ 533 03c9 CD030000 		.4byte	0x3cd
+ 534 03cd 0D       		.uleb128 0xd
+ 535 03ce 3A040000 		.4byte	.LASF63
+ 536 03d2 10       		.byte	0x10
+ 537 03d3 06       		.byte	0x6
+ 538 03d4 4901     		.2byte	0x149
+ 539 03d6 08       		.byte	0x8
+ 540 03d7 14040000 		.4byte	0x414
+ 541 03db 0B       		.uleb128 0xb
+ 542 03dc FC000000 		.4byte	.LASF50
+ 543 03e0 06       		.byte	0x6
+ 544 03e1 4A01     		.2byte	0x14a
+ 545 03e3 1A       		.byte	0x1a
+ 546 03e4 FF060000 		.4byte	0x6ff
+ 547 03e8 00       		.byte	0
+ 548 03e9 0B       		.uleb128 0xb
+ 549 03ea 34000000 		.4byte	.LASF53
+ 550 03ee 06       		.byte	0x6
+ 551 03ef 4C01     		.2byte	0x14c
+ 552 03f1 1A       		.byte	0x1a
+ 553 03f2 FF060000 		.4byte	0x6ff
+ 554 03f6 04       		.byte	0x4
+ 555 03f7 0B       		.uleb128 0xb
+ 556 03f8 14000000 		.4byte	.LASF60
+ 557 03fc 06       		.byte	0x6
+ 558 03fd 4E01     		.2byte	0x14e
+ 559 03ff 19       		.byte	0x19
+ 560 0400 A9040000 		.4byte	0x4a9
+ 561 0404 08       		.byte	0x8
+ 562 0405 0B       		.uleb128 0xb
+ 563 0406 37050000 		.4byte	.LASF64
+ 564 040a 06       		.byte	0x6
+ 565 040b 5601     		.2byte	0x156
+ 566 040d 19       		.byte	0x19
+ 567 040e 9D040000 		.4byte	0x49d
+ 568 0412 0C       		.byte	0xc
+ 569 0413 00       		.byte	0
+ 570 0414 03       		.uleb128 0x3
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 11
+
+
+ 571 0415 45000000 		.4byte	.LASF65
+ 572 0419 05       		.byte	0x5
+ 573 041a 60       		.byte	0x60
+ 574 041b 20       		.byte	0x20
+ 575 041c 20040000 		.4byte	0x420
+ 576 0420 0D       		.uleb128 0xd
+ 577 0421 AA010000 		.4byte	.LASF66
+ 578 0425 04       		.byte	0x4
+ 579 0426 06       		.byte	0x6
+ 580 0427 7001     		.2byte	0x170
+ 581 0429 08       		.byte	0x8
+ 582 042a 3D040000 		.4byte	0x43d
+ 583 042e 0B       		.uleb128 0xb
+ 584 042f 36060000 		.4byte	.LASF67
+ 585 0433 06       		.byte	0x6
+ 586 0434 7801     		.2byte	0x178
+ 587 0436 24       		.byte	0x24
+ 588 0437 E8060000 		.4byte	0x6e8
+ 589 043b 00       		.byte	0
+ 590 043c 00       		.byte	0
+ 591 043d 03       		.uleb128 0x3
+ 592 043e C8020000 		.4byte	.LASF68
+ 593 0442 05       		.byte	0x5
+ 594 0443 65       		.byte	0x65
+ 595 0444 1A       		.byte	0x1a
+ 596 0445 49040000 		.4byte	0x449
+ 597 0449 0D       		.uleb128 0xd
+ 598 044a 47050000 		.4byte	.LASF69
+ 599 044e 78       		.byte	0x78
+ 600 044f 06       		.byte	0x6
+ 601 0450 9001     		.2byte	0x190
+ 602 0452 08       		.byte	0x8
+ 603 0453 9D040000 		.4byte	0x49d
+ 604 0457 0B       		.uleb128 0xb
+ 605 0458 31010000 		.4byte	.LASF70
+ 606 045c 06       		.byte	0x6
+ 607 045d 9401     		.2byte	0x194
+ 608 045f 19       		.byte	0x19
+ 609 0460 D2020000 		.4byte	0x2d2
+ 610 0464 00       		.byte	0
+ 611 0465 0B       		.uleb128 0xb
+ 612 0466 37010000 		.4byte	.LASF71
+ 613 046a 06       		.byte	0x6
+ 614 046b 9801     		.2byte	0x198
+ 615 046d 19       		.byte	0x19
+ 616 046e C1030000 		.4byte	0x3c1
+ 617 0472 1C       		.byte	0x1c
+ 618 0473 0A       		.uleb128 0xa
+ 619 0474 64626700 		.ascii	"dbg\000"
+ 620 0478 06       		.byte	0x6
+ 621 0479 9C01     		.2byte	0x19c
+ 622 047b 19       		.byte	0x19
+ 623 047c 14040000 		.4byte	0x414
+ 624 0480 2C       		.byte	0x2c
+ 625 0481 0B       		.uleb128 0xb
+ 626 0482 B8000000 		.4byte	.LASF72
+ 627 0486 06       		.byte	0x6
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 12
+
+
+ 628 0487 A001     		.2byte	0x1a0
+ 629 0489 19       		.byte	0x19
+ 630 048a 69010000 		.4byte	0x169
+ 631 048e 30       		.byte	0x30
+ 632 048f 0A       		.uleb128 0xa
+ 633 0490 746D00   		.ascii	"tm\000"
+ 634 0493 06       		.byte	0x6
+ 635 0494 A501     		.2byte	0x1a5
+ 636 0496 19       		.byte	0x19
+ 637 0497 FC050000 		.4byte	0x5fc
+ 638 049b 74       		.byte	0x74
+ 639 049c 00       		.byte	0
+ 640 049d 03       		.uleb128 0x3
+ 641 049e 23060000 		.4byte	.LASF73
+ 642 04a2 07       		.byte	0x7
+ 643 04a3 6D       		.byte	0x6d
+ 644 04a4 12       		.byte	0x12
+ 645 04a5 E0000000 		.4byte	0xe0
+ 646 04a9 03       		.uleb128 0x3
+ 647 04aa E3010000 		.4byte	.LASF74
+ 648 04ae 07       		.byte	0x7
+ 649 04af 79       		.byte	0x79
+ 650 04b0 12       		.byte	0x12
+ 651 04b1 E0000000 		.4byte	0xe0
+ 652 04b5 11       		.uleb128 0x11
+ 653 04b6 E1000000 		.4byte	.LASF75
+ 654 04ba 08       		.byte	0x8
+ 655 04bb 0408     		.2byte	0x804
+ 656 04bd 19       		.byte	0x19
+ 657 04be DB000000 		.4byte	0xdb
+ 658 04c2 12       		.uleb128 0x12
+ 659 04c3 04020000 		.4byte	.LASF76
+ 660 04c7 09       		.byte	0x9
+ 661 04c8 4A       		.byte	0x4a
+ 662 04c9 11       		.byte	0x11
+ 663 04ca E0000000 		.4byte	0xe0
+ 664 04ce 13       		.uleb128 0x13
+ 665 04cf BE000000 		.4byte	0xbe
+ 666 04d3 DE040000 		.4byte	0x4de
+ 667 04d7 14       		.uleb128 0x14
+ 668 04d8 30000000 		.4byte	0x30
+ 669 04dc 0F       		.byte	0xf
+ 670 04dd 00       		.byte	0
+ 671 04de 05       		.uleb128 0x5
+ 672 04df CE040000 		.4byte	0x4ce
+ 673 04e3 12       		.uleb128 0x12
+ 674 04e4 E5030000 		.4byte	.LASF77
+ 675 04e8 09       		.byte	0x9
+ 676 04e9 4C       		.byte	0x4c
+ 677 04ea 17       		.byte	0x17
+ 678 04eb DE040000 		.4byte	0x4de
+ 679 04ef 13       		.uleb128 0x13
+ 680 04f0 BE000000 		.4byte	0xbe
+ 681 04f4 FF040000 		.4byte	0x4ff
+ 682 04f8 14       		.uleb128 0x14
+ 683 04f9 30000000 		.4byte	0x30
+ 684 04fd 07       		.byte	0x7
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 13
+
+
+ 685 04fe 00       		.byte	0
+ 686 04ff 05       		.uleb128 0x5
+ 687 0500 EF040000 		.4byte	0x4ef
+ 688 0504 12       		.uleb128 0x12
+ 689 0505 C2010000 		.4byte	.LASF78
+ 690 0509 09       		.byte	0x9
+ 691 050a 4D       		.byte	0x4d
+ 692 050b 17       		.byte	0x17
+ 693 050c FF040000 		.4byte	0x4ff
+ 694 0510 13       		.uleb128 0x13
+ 695 0511 EC000000 		.4byte	0xec
+ 696 0515 20050000 		.4byte	0x520
+ 697 0519 14       		.uleb128 0x14
+ 698 051a 30000000 		.4byte	0x30
+ 699 051e 0B       		.byte	0xb
+ 700 051f 00       		.byte	0
+ 701 0520 05       		.uleb128 0x5
+ 702 0521 10050000 		.4byte	0x510
+ 703 0525 12       		.uleb128 0x12
+ 704 0526 B9060000 		.4byte	.LASF79
+ 705 052a 09       		.byte	0x9
+ 706 052b 4E       		.byte	0x4e
+ 707 052c 17       		.byte	0x17
+ 708 052d 20050000 		.4byte	0x520
+ 709 0531 03       		.uleb128 0x3
+ 710 0532 FD030000 		.4byte	.LASF80
+ 711 0536 0A       		.byte	0xa
+ 712 0537 68       		.byte	0x68
+ 713 0538 12       		.byte	0x12
+ 714 0539 F1000000 		.4byte	0xf1
+ 715 053d 0D       		.uleb128 0xd
+ 716 053e 39000000 		.4byte	.LASF81
+ 717 0542 24       		.byte	0x24
+ 718 0543 0B       		.byte	0xb
+ 719 0544 8501     		.2byte	0x185
+ 720 0546 08       		.byte	0x8
+ 721 0547 C3050000 		.4byte	0x5c3
+ 722 054b 0A       		.uleb128 0xa
+ 723 054c 723400   		.ascii	"r4\000"
+ 724 054f 0B       		.byte	0xb
+ 725 0550 9E01     		.2byte	0x19e
+ 726 0552 11       		.byte	0x11
+ 727 0553 E0000000 		.4byte	0xe0
+ 728 0557 00       		.byte	0
+ 729 0558 0A       		.uleb128 0xa
+ 730 0559 723500   		.ascii	"r5\000"
+ 731 055c 0B       		.byte	0xb
+ 732 055d 9F01     		.2byte	0x19f
+ 733 055f 11       		.byte	0x11
+ 734 0560 E0000000 		.4byte	0xe0
+ 735 0564 04       		.byte	0x4
+ 736 0565 0A       		.uleb128 0xa
+ 737 0566 723600   		.ascii	"r6\000"
+ 738 0569 0B       		.byte	0xb
+ 739 056a A001     		.2byte	0x1a0
+ 740 056c 11       		.byte	0x11
+ 741 056d E0000000 		.4byte	0xe0
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 14
+
+
+ 742 0571 08       		.byte	0x8
+ 743 0572 0A       		.uleb128 0xa
+ 744 0573 723700   		.ascii	"r7\000"
+ 745 0576 0B       		.byte	0xb
+ 746 0577 A101     		.2byte	0x1a1
+ 747 0579 11       		.byte	0x11
+ 748 057a E0000000 		.4byte	0xe0
+ 749 057e 0C       		.byte	0xc
+ 750 057f 0A       		.uleb128 0xa
+ 751 0580 723800   		.ascii	"r8\000"
+ 752 0583 0B       		.byte	0xb
+ 753 0584 A201     		.2byte	0x1a2
+ 754 0586 11       		.byte	0x11
+ 755 0587 E0000000 		.4byte	0xe0
+ 756 058b 10       		.byte	0x10
+ 757 058c 0A       		.uleb128 0xa
+ 758 058d 723900   		.ascii	"r9\000"
+ 759 0590 0B       		.byte	0xb
+ 760 0591 A301     		.2byte	0x1a3
+ 761 0593 11       		.byte	0x11
+ 762 0594 E0000000 		.4byte	0xe0
+ 763 0598 14       		.byte	0x14
+ 764 0599 0A       		.uleb128 0xa
+ 765 059a 72313000 		.ascii	"r10\000"
+ 766 059e 0B       		.byte	0xb
+ 767 059f A401     		.2byte	0x1a4
+ 768 05a1 11       		.byte	0x11
+ 769 05a2 E0000000 		.4byte	0xe0
+ 770 05a6 18       		.byte	0x18
+ 771 05a7 0A       		.uleb128 0xa
+ 772 05a8 72313100 		.ascii	"r11\000"
+ 773 05ac 0B       		.byte	0xb
+ 774 05ad A501     		.2byte	0x1a5
+ 775 05af 11       		.byte	0x11
+ 776 05b0 E0000000 		.4byte	0xe0
+ 777 05b4 1C       		.byte	0x1c
+ 778 05b5 0A       		.uleb128 0xa
+ 779 05b6 6C7200   		.ascii	"lr\000"
+ 780 05b9 0B       		.byte	0xb
+ 781 05ba A601     		.2byte	0x1a6
+ 782 05bc 11       		.byte	0x11
+ 783 05bd E0000000 		.4byte	0xe0
+ 784 05c1 20       		.byte	0x20
+ 785 05c2 00       		.byte	0
+ 786 05c3 0D       		.uleb128 0xd
+ 787 05c4 73040000 		.4byte	.LASF82
+ 788 05c8 04       		.byte	0x4
+ 789 05c9 0B       		.byte	0xb
+ 790 05ca A901     		.2byte	0x1a9
+ 791 05cc 08       		.byte	0x8
+ 792 05cd DF050000 		.4byte	0x5df
+ 793 05d1 0A       		.uleb128 0xa
+ 794 05d2 737000   		.ascii	"sp\000"
+ 795 05d5 0B       		.byte	0xb
+ 796 05d6 AA01     		.2byte	0x1aa
+ 797 05d8 1A       		.byte	0x1a
+ 798 05d9 DF050000 		.4byte	0x5df
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 15
+
+
+ 799 05dd 00       		.byte	0
+ 800 05de 00       		.byte	0
+ 801 05df 0C       		.uleb128 0xc
+ 802 05e0 04       		.byte	0x4
+ 803 05e1 3D050000 		.4byte	0x53d
+ 804 05e5 15       		.uleb128 0x15
+ 805 05e6 04       		.byte	0x4
+ 806 05e7 0C       		.byte	0xc
+ 807 05e8 38       		.byte	0x38
+ 808 05e9 09       		.byte	0x9
+ 809 05ea FC050000 		.4byte	0x5fc
+ 810 05ee 08       		.uleb128 0x8
+ 811 05ef 40060000 		.4byte	.LASF83
+ 812 05f3 0C       		.byte	0xc
+ 813 05f4 3C       		.byte	0x3c
+ 814 05f5 19       		.byte	0x19
+ 815 05f6 FD000000 		.4byte	0xfd
+ 816 05fa 00       		.byte	0
+ 817 05fb 00       		.byte	0
+ 818 05fc 03       		.uleb128 0x3
+ 819 05fd 80040000 		.4byte	.LASF84
+ 820 0601 0C       		.byte	0xc
+ 821 0602 3D       		.byte	0x3d
+ 822 0603 03       		.byte	0x3
+ 823 0604 E5050000 		.4byte	0x5e5
+ 824 0608 16       		.uleb128 0x16
+ 825 0609 04       		.byte	0x4
+ 826 060a 06       		.byte	0x6
+ 827 060b C6       		.byte	0xc6
+ 828 060c 03       		.byte	0x3
+ 829 060d 73060000 		.4byte	0x673
+ 830 0611 17       		.uleb128 0x17
+ 831 0612 1A000000 		.4byte	.LASF85
+ 832 0616 06       		.byte	0x6
+ 833 0617 CD       		.byte	0xcd
+ 834 0618 19       		.byte	0x19
+ 835 0619 39010000 		.4byte	0x139
+ 836 061d 17       		.uleb128 0x17
+ 837 061e AF000000 		.4byte	.LASF86
+ 838 0622 06       		.byte	0x6
+ 839 0623 D4       		.byte	0xd4
+ 840 0624 19       		.byte	0x19
+ 841 0625 39010000 		.4byte	0x139
+ 842 0629 17       		.uleb128 0x17
+ 843 062a DF060000 		.4byte	.LASF87
+ 844 062e 06       		.byte	0x6
+ 845 062f DB       		.byte	0xdb
+ 846 0630 1A       		.byte	0x1a
+ 847 0631 5E030000 		.4byte	0x35e
+ 848 0635 17       		.uleb128 0x17
+ 849 0636 1B020000 		.4byte	.LASF88
+ 850 063a 06       		.byte	0x6
+ 851 063b E2       		.byte	0xe2
+ 852 063c 1A       		.byte	0x1a
+ 853 063d 73060000 		.4byte	0x673
+ 854 0641 17       		.uleb128 0x17
+ 855 0642 C3000000 		.4byte	.LASF89
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 16
+
+
+ 856 0646 06       		.byte	0x6
+ 857 0647 E7       		.byte	0xe7
+ 858 0648 19       		.byte	0x19
+ 859 0649 39010000 		.4byte	0x139
+ 860 064d 17       		.uleb128 0x17
+ 861 064e 14020000 		.4byte	.LASF90
+ 862 0652 06       		.byte	0x6
+ 863 0653 F0       		.byte	0xf0
+ 864 0654 1A       		.byte	0x1a
+ 865 0655 A1060000 		.4byte	0x6a1
+ 866 0659 17       		.uleb128 0x17
+ 867 065a BA050000 		.4byte	.LASF91
+ 868 065e 06       		.byte	0x6
+ 869 065f F9       		.byte	0xf9
+ 870 0660 1A       		.byte	0x1a
+ 871 0661 DC060000 		.4byte	0x6dc
+ 872 0665 18       		.uleb128 0x18
+ 873 0666 40050000 		.4byte	.LASF92
+ 874 066a 06       		.byte	0x6
+ 875 066b 0101     		.2byte	0x101
+ 876 066d 19       		.byte	0x19
+ 877 066e 45010000 		.4byte	0x145
+ 878 0672 00       		.byte	0
+ 879 0673 0C       		.uleb128 0xc
+ 880 0674 04       		.byte	0x4
+ 881 0675 65020000 		.4byte	0x265
+ 882 0679 07       		.uleb128 0x7
+ 883 067a 76050000 		.4byte	.LASF93
+ 884 067e 0C       		.byte	0xc
+ 885 067f 0D       		.byte	0xd
+ 886 0680 34       		.byte	0x34
+ 887 0681 10       		.byte	0x10
+ 888 0682 A1060000 		.4byte	0x6a1
+ 889 0686 08       		.uleb128 0x8
+ 890 0687 7A020000 		.4byte	.LASF31
+ 891 068b 0D       		.byte	0xd
+ 892 068c 35       		.byte	0x35
+ 893 068d 19       		.byte	0x19
+ 894 068e 9E020000 		.4byte	0x29e
+ 895 0692 00       		.byte	0
+ 896 0693 09       		.uleb128 0x9
+ 897 0694 636E7400 		.ascii	"cnt\000"
+ 898 0698 0D       		.byte	0xd
+ 899 0699 37       		.byte	0x37
+ 900 069a 19       		.byte	0x19
+ 901 069b 51010000 		.4byte	0x151
+ 902 069f 08       		.byte	0x8
+ 903 06a0 00       		.byte	0
+ 904 06a1 0C       		.uleb128 0xc
+ 905 06a2 04       		.byte	0x4
+ 906 06a3 79060000 		.4byte	0x679
+ 907 06a7 07       		.uleb128 0x7
+ 908 06a8 47060000 		.4byte	.LASF94
+ 909 06ac 10       		.byte	0x10
+ 910 06ad 0E       		.byte	0xe
+ 911 06ae 39       		.byte	0x39
+ 912 06af 08       		.byte	0x8
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 17
+
+
+ 913 06b0 DC060000 		.4byte	0x6dc
+ 914 06b4 08       		.uleb128 0x8
+ 915 06b5 7A020000 		.4byte	.LASF31
+ 916 06b9 0E       		.byte	0xe
+ 917 06ba 3A       		.byte	0x3a
+ 918 06bb 19       		.byte	0x19
+ 919 06bc 9E020000 		.4byte	0x29e
+ 920 06c0 00       		.byte	0
+ 921 06c1 08       		.uleb128 0x8
+ 922 06c2 D1050000 		.4byte	.LASF95
+ 923 06c6 0E       		.byte	0xe
+ 924 06c7 3C       		.byte	0x3c
+ 925 06c8 1A       		.byte	0x1a
+ 926 06c9 71020000 		.4byte	0x271
+ 927 06cd 08       		.byte	0x8
+ 928 06ce 08       		.uleb128 0x8
+ 929 06cf FC000000 		.4byte	.LASF50
+ 930 06d3 0E       		.byte	0xe
+ 931 06d4 3E       		.byte	0x3e
+ 932 06d5 1A       		.byte	0x1a
+ 933 06d6 56080000 		.4byte	0x856
+ 934 06da 0C       		.byte	0xc
+ 935 06db 00       		.byte	0
+ 936 06dc 0C       		.uleb128 0xc
+ 937 06dd 04       		.byte	0x4
+ 938 06de A7060000 		.4byte	0x6a7
+ 939 06e2 0C       		.uleb128 0xc
+ 940 06e3 04       		.byte	0x4
+ 941 06e4 F4060000 		.4byte	0x6f4
+ 942 06e8 06       		.uleb128 0x6
+ 943 06e9 E2060000 		.4byte	0x6e2
+ 944 06ed 04       		.uleb128 0x4
+ 945 06ee 01       		.byte	0x1
+ 946 06ef 08       		.byte	0x8
+ 947 06f0 F0050000 		.4byte	.LASF96
+ 948 06f4 05       		.uleb128 0x5
+ 949 06f5 ED060000 		.4byte	0x6ed
+ 950 06f9 0C       		.uleb128 0xc
+ 951 06fa 04       		.byte	0x4
+ 952 06fb 31050000 		.4byte	0x531
+ 953 06ff 0C       		.uleb128 0xc
+ 954 0700 04       		.byte	0x4
+ 955 0701 60030000 		.4byte	0x360
+ 956 0705 19       		.uleb128 0x19
+ 957 0706 636800   		.ascii	"ch\000"
+ 958 0709 06       		.byte	0x6
+ 959 070a C701     		.2byte	0x1c7
+ 960 070c 14       		.byte	0x14
+ 961 070d 3D040000 		.4byte	0x43d
+ 962 0711 13       		.uleb128 0x13
+ 963 0712 31050000 		.4byte	0x531
+ 964 0716 1C070000 		.4byte	0x71c
+ 965 071a 1A       		.uleb128 0x1a
+ 966 071b 00       		.byte	0
+ 967 071c 11       		.uleb128 0x11
+ 968 071d 8C050000 		.4byte	.LASF97
+ 969 0721 0F       		.byte	0xf
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 18
+
+
+ 970 0722 1701     		.2byte	0x117
+ 971 0724 13       		.byte	0x13
+ 972 0725 11070000 		.4byte	0x711
+ 973 0729 15       		.uleb128 0x15
+ 974 072a 16       		.byte	0x16
+ 975 072b 10       		.byte	0x10
+ 976 072c 34       		.byte	0x34
+ 977 072d 09       		.byte	0x9
+ 978 072e 1D080000 		.4byte	0x81d
+ 979 0732 08       		.uleb128 0x8
+ 980 0733 64010000 		.4byte	.LASF98
+ 981 0737 10       		.byte	0x10
+ 982 0738 35       		.byte	0x35
+ 983 0739 0D       		.byte	0xd
+ 984 073a 1D080000 		.4byte	0x81d
+ 985 073e 00       		.byte	0
+ 986 073f 08       		.uleb128 0x8
+ 987 0740 D0010000 		.4byte	.LASF99
+ 988 0744 10       		.byte	0x10
+ 989 0745 36       		.byte	0x36
+ 990 0746 0D       		.byte	0xd
+ 991 0747 B2000000 		.4byte	0xb2
+ 992 074b 04       		.byte	0x4
+ 993 074c 08       		.uleb128 0x8
+ 994 074d 2C010000 		.4byte	.LASF100
+ 995 0751 10       		.byte	0x10
+ 996 0752 37       		.byte	0x37
+ 997 0753 0D       		.byte	0xd
+ 998 0754 B2000000 		.4byte	0xb2
+ 999 0758 05       		.byte	0x5
+ 1000 0759 08       		.uleb128 0x8
+ 1001 075a 17040000 		.4byte	.LASF101
+ 1002 075e 10       		.byte	0x10
+ 1003 075f 38       		.byte	0x38
+ 1004 0760 0D       		.byte	0xd
+ 1005 0761 C3000000 		.4byte	0xc3
+ 1006 0765 06       		.byte	0x6
+ 1007 0766 08       		.uleb128 0x8
+ 1008 0767 79060000 		.4byte	.LASF102
+ 1009 076b 10       		.byte	0x10
+ 1010 076c 39       		.byte	0x39
+ 1011 076d 0D       		.byte	0xd
+ 1012 076e B2000000 		.4byte	0xb2
+ 1013 0772 08       		.byte	0x8
+ 1014 0773 08       		.uleb128 0x8
+ 1015 0774 9E050000 		.4byte	.LASF103
+ 1016 0778 10       		.byte	0x10
+ 1017 0779 3A       		.byte	0x3a
+ 1018 077a 0D       		.byte	0xd
+ 1019 077b B2000000 		.4byte	0xb2
+ 1020 077f 09       		.byte	0x9
+ 1021 0780 08       		.uleb128 0x8
+ 1022 0781 F0040000 		.4byte	.LASF104
+ 1023 0785 10       		.byte	0x10
+ 1024 0786 3B       		.byte	0x3b
+ 1025 0787 0D       		.byte	0xd
+ 1026 0788 B2000000 		.4byte	0xb2
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 19
+
+
+ 1027 078c 0A       		.byte	0xa
+ 1028 078d 08       		.uleb128 0x8
+ 1029 078e 17050000 		.4byte	.LASF105
+ 1030 0792 10       		.byte	0x10
+ 1031 0793 3C       		.byte	0x3c
+ 1032 0794 0D       		.byte	0xd
+ 1033 0795 B2000000 		.4byte	0xb2
+ 1034 0799 0B       		.byte	0xb
+ 1035 079a 08       		.uleb128 0x8
+ 1036 079b D4020000 		.4byte	.LASF106
+ 1037 079f 10       		.byte	0x10
+ 1038 07a0 3D       		.byte	0x3d
+ 1039 07a1 0D       		.byte	0xd
+ 1040 07a2 B2000000 		.4byte	0xb2
+ 1041 07a6 0C       		.byte	0xc
+ 1042 07a7 08       		.uleb128 0x8
+ 1043 07a8 69040000 		.4byte	.LASF107
+ 1044 07ac 10       		.byte	0x10
+ 1045 07ad 3E       		.byte	0x3e
+ 1046 07ae 0D       		.byte	0xd
+ 1047 07af B2000000 		.4byte	0xb2
+ 1048 07b3 0D       		.byte	0xd
+ 1049 07b4 08       		.uleb128 0x8
+ 1050 07b5 50060000 		.4byte	.LASF108
+ 1051 07b9 10       		.byte	0x10
+ 1052 07ba 3F       		.byte	0x3f
+ 1053 07bb 0D       		.byte	0xd
+ 1054 07bc B2000000 		.4byte	0xb2
+ 1055 07c0 0E       		.byte	0xe
+ 1056 07c1 08       		.uleb128 0x8
+ 1057 07c2 B0060000 		.4byte	.LASF109
+ 1058 07c6 10       		.byte	0x10
+ 1059 07c7 40       		.byte	0x40
+ 1060 07c8 0D       		.byte	0xd
+ 1061 07c9 B2000000 		.4byte	0xb2
+ 1062 07cd 0F       		.byte	0xf
+ 1063 07ce 08       		.uleb128 0x8
+ 1064 07cf 20050000 		.4byte	.LASF110
+ 1065 07d3 10       		.byte	0x10
+ 1066 07d4 41       		.byte	0x41
+ 1067 07d5 0D       		.byte	0xd
+ 1068 07d6 B2000000 		.4byte	0xb2
+ 1069 07da 10       		.byte	0x10
+ 1070 07db 08       		.uleb128 0x8
+ 1071 07dc F5060000 		.4byte	.LASF111
+ 1072 07e0 10       		.byte	0x10
+ 1073 07e1 42       		.byte	0x42
+ 1074 07e2 0D       		.byte	0xd
+ 1075 07e3 B2000000 		.4byte	0xb2
+ 1076 07e7 11       		.byte	0x11
+ 1077 07e8 08       		.uleb128 0x8
+ 1078 07e9 11070000 		.4byte	.LASF112
+ 1079 07ed 10       		.byte	0x10
+ 1080 07ee 43       		.byte	0x43
+ 1081 07ef 0D       		.byte	0xd
+ 1082 07f0 B2000000 		.4byte	0xb2
+ 1083 07f4 12       		.byte	0x12
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 20
+
+
+ 1084 07f5 08       		.uleb128 0x8
+ 1085 07f6 86020000 		.4byte	.LASF113
+ 1086 07fa 10       		.byte	0x10
+ 1087 07fb 44       		.byte	0x44
+ 1088 07fc 0D       		.byte	0xd
+ 1089 07fd B2000000 		.4byte	0xb2
+ 1090 0801 13       		.byte	0x13
+ 1091 0802 08       		.uleb128 0x8
+ 1092 0803 8A010000 		.4byte	.LASF114
+ 1093 0807 10       		.byte	0x10
+ 1094 0808 45       		.byte	0x45
+ 1095 0809 0D       		.byte	0xd
+ 1096 080a B2000000 		.4byte	0xb2
+ 1097 080e 14       		.byte	0x14
+ 1098 080f 08       		.uleb128 0x8
+ 1099 0810 83050000 		.4byte	.LASF115
+ 1100 0814 10       		.byte	0x10
+ 1101 0815 46       		.byte	0x46
+ 1102 0816 0D       		.byte	0xd
+ 1103 0817 B2000000 		.4byte	0xb2
+ 1104 081b 15       		.byte	0x15
+ 1105 081c 00       		.byte	0
+ 1106 081d 13       		.uleb128 0x13
+ 1107 081e ED060000 		.4byte	0x6ed
+ 1108 0822 2D080000 		.4byte	0x82d
+ 1109 0826 14       		.uleb128 0x14
+ 1110 0827 30000000 		.4byte	0x30
+ 1111 082b 03       		.byte	0x3
+ 1112 082c 00       		.byte	0
+ 1113 082d 03       		.uleb128 0x3
+ 1114 082e 80010000 		.4byte	.LASF116
+ 1115 0832 10       		.byte	0x10
+ 1116 0833 47       		.byte	0x47
+ 1117 0834 03       		.byte	0x3
+ 1118 0835 29070000 		.4byte	0x729
+ 1119 0839 05       		.uleb128 0x5
+ 1120 083a 2D080000 		.4byte	0x82d
+ 1121 083e 12       		.uleb128 0x12
+ 1122 083f 28020000 		.4byte	.LASF117
+ 1123 0843 10       		.byte	0x10
+ 1124 0844 6C       		.byte	0x6c
+ 1125 0845 1D       		.byte	0x1d
+ 1126 0846 39080000 		.4byte	0x839
+ 1127 084a 03       		.uleb128 0x3
+ 1128 084b D5010000 		.4byte	.LASF118
+ 1129 084f 0E       		.byte	0xe
+ 1130 0850 34       		.byte	0x34
+ 1131 0851 19       		.byte	0x19
+ 1132 0852 A7060000 		.4byte	0x6a7
+ 1133 0856 0C       		.uleb128 0xc
+ 1134 0857 04       		.byte	0x4
+ 1135 0858 4A080000 		.4byte	0x84a
+ 1136 085c 04       		.uleb128 0x4
+ 1137 085d 01       		.byte	0x1
+ 1138 085e 02       		.byte	0x2
+ 1139 085f FB040000 		.4byte	.LASF119
+ 1140 0863 03       		.uleb128 0x3
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 21
+
+
+ 1141 0864 66000000 		.4byte	.LASF120
+ 1142 0868 11       		.byte	0x11
+ 1143 0869 47       		.byte	0x47
+ 1144 086a 11       		.byte	0x11
+ 1145 086b 6F080000 		.4byte	0x86f
+ 1146 086f 0C       		.uleb128 0xc
+ 1147 0870 04       		.byte	0x4
+ 1148 0871 75080000 		.4byte	0x875
+ 1149 0875 1B       		.uleb128 0x1b
+ 1150 0876 5E030000 		.4byte	0x35e
+ 1151 087a 89080000 		.4byte	0x889
+ 1152 087e 0F       		.uleb128 0xf
+ 1153 087f 24000000 		.4byte	0x24
+ 1154 0883 0F       		.uleb128 0xf
+ 1155 0884 30000000 		.4byte	0x30
+ 1156 0888 00       		.byte	0
+ 1157 0889 15       		.uleb128 0x15
+ 1158 088a 08       		.byte	0x8
+ 1159 088b 11       		.byte	0x11
+ 1160 088c 51       		.byte	0x51
+ 1161 088d 09       		.byte	0x9
+ 1162 088e AD080000 		.4byte	0x8ad
+ 1163 0892 08       		.uleb128 0x8
+ 1164 0893 6F010000 		.4byte	.LASF121
+ 1165 0897 11       		.byte	0x11
+ 1166 0898 55       		.byte	0x55
+ 1167 0899 0C       		.byte	0xc
+ 1168 089a AD080000 		.4byte	0x8ad
+ 1169 089e 00       		.byte	0
+ 1170 089f 08       		.uleb128 0x8
+ 1171 08a0 21020000 		.4byte	.LASF122
+ 1172 08a4 11       		.byte	0x11
+ 1173 08a5 59       		.byte	0x59
+ 1174 08a6 0C       		.byte	0xc
+ 1175 08a7 AD080000 		.4byte	0x8ad
+ 1176 08ab 04       		.byte	0x4
+ 1177 08ac 00       		.byte	0
+ 1178 08ad 0C       		.uleb128 0xc
+ 1179 08ae 04       		.byte	0x4
+ 1180 08af B2000000 		.4byte	0xb2
+ 1181 08b3 03       		.uleb128 0x3
+ 1182 08b4 B2040000 		.4byte	.LASF123
+ 1183 08b8 11       		.byte	0x11
+ 1184 08b9 5A       		.byte	0x5a
+ 1185 08ba 03       		.byte	0x3
+ 1186 08bb 89080000 		.4byte	0x889
+ 1187 08bf 12       		.uleb128 0x12
+ 1188 08c0 18060000 		.4byte	.LASF124
+ 1189 08c4 11       		.byte	0x11
+ 1190 08c5 75       		.byte	0x75
+ 1191 08c6 12       		.byte	0x12
+ 1192 08c7 B3080000 		.4byte	0x8b3
+ 1193 08cb 07       		.uleb128 0x7
+ 1194 08cc A4060000 		.4byte	.LASF125
+ 1195 08d0 04       		.byte	0x4
+ 1196 08d1 12       		.byte	0x12
+ 1197 08d2 38       		.byte	0x38
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 22
+
+
+ 1198 08d3 08       		.byte	0x8
+ 1199 08d4 E6080000 		.4byte	0x8e6
+ 1200 08d8 08       		.uleb128 0x8
+ 1201 08d9 FC000000 		.4byte	.LASF50
+ 1202 08dd 12       		.byte	0x12
+ 1203 08de 39       		.byte	0x39
+ 1204 08df 1A       		.byte	0x1a
+ 1205 08e0 E6080000 		.4byte	0x8e6
+ 1206 08e4 00       		.byte	0
+ 1207 08e5 00       		.byte	0
+ 1208 08e6 0C       		.uleb128 0xc
+ 1209 08e7 04       		.byte	0x4
+ 1210 08e8 CB080000 		.4byte	0x8cb
+ 1211 08ec 15       		.uleb128 0x15
+ 1212 08ed 10       		.byte	0x10
+ 1213 08ee 12       		.byte	0x12
+ 1214 08ef 40       		.byte	0x40
+ 1215 08f0 09       		.byte	0x9
+ 1216 08f1 2A090000 		.4byte	0x92a
+ 1217 08f5 08       		.uleb128 0x8
+ 1218 08f6 FC000000 		.4byte	.LASF50
+ 1219 08fa 12       		.byte	0x12
+ 1220 08fb 41       		.byte	0x41
+ 1221 08fc 1A       		.byte	0x1a
+ 1222 08fd E6080000 		.4byte	0x8e6
+ 1223 0901 00       		.byte	0
+ 1224 0902 08       		.uleb128 0x8
+ 1225 0903 6D060000 		.4byte	.LASF126
+ 1226 0907 12       		.byte	0x12
+ 1227 0908 42       		.byte	0x42
+ 1228 0909 19       		.byte	0x19
+ 1229 090a 24000000 		.4byte	0x24
+ 1230 090e 04       		.byte	0x4
+ 1231 090f 08       		.uleb128 0x8
+ 1232 0910 DD010000 		.4byte	.LASF127
+ 1233 0914 12       		.byte	0x12
+ 1234 0915 44       		.byte	0x44
+ 1235 0916 19       		.byte	0x19
+ 1236 0917 30000000 		.4byte	0x30
+ 1237 091b 08       		.byte	0x8
+ 1238 091c 08       		.uleb128 0x8
+ 1239 091d 54000000 		.4byte	.LASF128
+ 1240 0921 12       		.byte	0x12
+ 1241 0922 45       		.byte	0x45
+ 1242 0923 19       		.byte	0x19
+ 1243 0924 63080000 		.4byte	0x863
+ 1244 0928 0C       		.byte	0xc
+ 1245 0929 00       		.byte	0
+ 1246 092a 03       		.uleb128 0x3
+ 1247 092b 31020000 		.4byte	.LASF129
+ 1248 092f 12       		.byte	0x12
+ 1249 0930 47       		.byte	0x47
+ 1250 0931 03       		.byte	0x3
+ 1251 0932 EC080000 		.4byte	0x8ec
+ 1252 0936 07       		.uleb128 0x7
+ 1253 0937 D9040000 		.4byte	.LASF130
+ 1254 093b 10       		.byte	0x10
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 23
+
+
+ 1255 093c 13       		.byte	0x13
+ 1256 093d A9       		.byte	0xa9
+ 1257 093e 10       		.byte	0x10
+ 1258 093f 6B090000 		.4byte	0x96b
+ 1259 0943 08       		.uleb128 0x8
+ 1260 0944 FC000000 		.4byte	.LASF50
+ 1261 0948 13       		.byte	0x13
+ 1262 0949 AD       		.byte	0xad
+ 1263 094a 1A       		.byte	0x1a
+ 1264 094b 6B090000 		.4byte	0x96b
+ 1265 094f 00       		.byte	0
+ 1266 0950 08       		.uleb128 0x8
+ 1267 0951 C4040000 		.4byte	.LASF39
+ 1268 0955 13       		.byte	0x13
+ 1269 0956 B1       		.byte	0xb1
+ 1270 0957 19       		.byte	0x19
+ 1271 0958 5D010000 		.4byte	0x15d
+ 1272 095c 04       		.byte	0x4
+ 1273 095d 08       		.uleb128 0x8
+ 1274 095e 98020000 		.4byte	.LASF35
+ 1275 0962 13       		.byte	0x13
+ 1276 0963 B3       		.byte	0xb3
+ 1277 0964 19       		.byte	0x19
+ 1278 0965 71090000 		.4byte	0x971
+ 1279 0969 08       		.byte	0x8
+ 1280 096a 00       		.byte	0
+ 1281 096b 0C       		.uleb128 0xc
+ 1282 096c 04       		.byte	0x4
+ 1283 096d 36090000 		.4byte	0x936
+ 1284 0971 13       		.uleb128 0x13
+ 1285 0972 ED060000 		.4byte	0x6ed
+ 1286 0976 81090000 		.4byte	0x981
+ 1287 097a 14       		.uleb128 0x14
+ 1288 097b 30000000 		.4byte	0x30
+ 1289 097f 07       		.byte	0x7
+ 1290 0980 00       		.byte	0
+ 1291 0981 03       		.uleb128 0x3
+ 1292 0982 EE000000 		.4byte	.LASF131
+ 1293 0986 13       		.byte	0x13
+ 1294 0987 B7       		.byte	0xb7
+ 1295 0988 03       		.byte	0x3
+ 1296 0989 36090000 		.4byte	0x936
+ 1297 098d 07       		.uleb128 0x7
+ 1298 098e 5D040000 		.4byte	.LASF132
+ 1299 0992 04       		.byte	0x4
+ 1300 0993 13       		.byte	0x13
+ 1301 0994 BC       		.byte	0xbc
+ 1302 0995 10       		.byte	0x10
+ 1303 0996 A8090000 		.4byte	0x9a8
+ 1304 099a 08       		.uleb128 0x8
+ 1305 099b FC000000 		.4byte	.LASF50
+ 1306 099f 13       		.byte	0x13
+ 1307 09a0 BD       		.byte	0xbd
+ 1308 09a1 1A       		.byte	0x1a
+ 1309 09a2 A8090000 		.4byte	0x9a8
+ 1310 09a6 00       		.byte	0
+ 1311 09a7 00       		.byte	0
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 24
+
+
+ 1312 09a8 0C       		.uleb128 0xc
+ 1313 09a9 04       		.byte	0x4
+ 1314 09aa 81090000 		.4byte	0x981
+ 1315 09ae 03       		.uleb128 0x3
+ 1316 09af BD020000 		.4byte	.LASF133
+ 1317 09b3 13       		.byte	0x13
+ 1318 09b4 BE       		.byte	0xbe
+ 1319 09b5 03       		.byte	0x3
+ 1320 09b6 8D090000 		.4byte	0x98d
+ 1321 09ba 0D       		.uleb128 0xd
+ 1322 09bb 81060000 		.4byte	.LASF134
+ 1323 09bf 48       		.byte	0x48
+ 1324 09c0 13       		.byte	0x13
+ 1325 09c1 2001     		.2byte	0x120
+ 1326 09c3 10       		.byte	0x10
+ 1327 09c4 470A0000 		.4byte	0xa47
+ 1328 09c8 0A       		.uleb128 0xa
+ 1329 09c9 6D747800 		.ascii	"mtx\000"
+ 1330 09cd 13       		.byte	0x13
+ 1331 09ce 2501     		.2byte	0x125
+ 1332 09d0 19       		.byte	0x19
+ 1333 09d1 4A080000 		.4byte	0x84a
+ 1334 09d5 00       		.byte	0
+ 1335 09d6 0B       		.uleb128 0xb
+ 1336 09d7 FB050000 		.4byte	.LASF135
+ 1337 09db 13       		.byte	0x13
+ 1338 09dc 2C01     		.2byte	0x12c
+ 1339 09de 19       		.byte	0x19
+ 1340 09df AE090000 		.4byte	0x9ae
+ 1341 09e3 10       		.byte	0x10
+ 1342 09e4 0B       		.uleb128 0xb
+ 1343 09e5 5C050000 		.4byte	.LASF136
+ 1344 09e9 13       		.byte	0x13
+ 1345 09ea 3001     		.2byte	0x130
+ 1346 09ec 19       		.byte	0x19
+ 1347 09ed 2A090000 		.4byte	0x92a
+ 1348 09f1 14       		.byte	0x14
+ 1349 09f2 0B       		.uleb128 0xb
+ 1350 09f3 8F020000 		.4byte	.LASF137
+ 1351 09f7 13       		.byte	0x13
+ 1352 09f8 3501     		.2byte	0x135
+ 1353 09fa 19       		.byte	0x19
+ 1354 09fb AE090000 		.4byte	0x9ae
+ 1355 09ff 24       		.byte	0x24
+ 1356 0a00 0B       		.uleb128 0xb
+ 1357 0a01 5D000000 		.4byte	.LASF138
+ 1358 0a05 13       		.byte	0x13
+ 1359 0a06 3B01     		.2byte	0x13b
+ 1360 0a08 19       		.byte	0x19
+ 1361 0a09 AE090000 		.4byte	0x9ae
+ 1362 0a0d 28       		.byte	0x28
+ 1363 0a0e 0B       		.uleb128 0xb
+ 1364 0a0f 96040000 		.4byte	.LASF139
+ 1365 0a13 13       		.byte	0x13
+ 1366 0a14 3F01     		.2byte	0x13f
+ 1367 0a16 19       		.byte	0x19
+ 1368 0a17 2A090000 		.4byte	0x92a
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 25
+
+
+ 1369 0a1b 2C       		.byte	0x2c
+ 1370 0a1c 0B       		.uleb128 0xb
+ 1371 0a1d A1010000 		.4byte	.LASF140
+ 1372 0a21 13       		.byte	0x13
+ 1373 0a22 4501     		.2byte	0x145
+ 1374 0a24 19       		.byte	0x19
+ 1375 0a25 AE090000 		.4byte	0x9ae
+ 1376 0a29 3C       		.byte	0x3c
+ 1377 0a2a 0B       		.uleb128 0xb
+ 1378 0a2b D5060000 		.4byte	.LASF141
+ 1379 0a2f 13       		.byte	0x13
+ 1380 0a30 4B01     		.2byte	0x14b
+ 1381 0a32 19       		.byte	0x19
+ 1382 0a33 AE090000 		.4byte	0x9ae
+ 1383 0a37 40       		.byte	0x40
+ 1384 0a38 0B       		.uleb128 0xb
+ 1385 0a39 A7050000 		.4byte	.LASF142
+ 1386 0a3d 13       		.byte	0x13
+ 1387 0a3e 5101     		.2byte	0x151
+ 1388 0a40 19       		.byte	0x19
+ 1389 0a41 AE090000 		.4byte	0x9ae
+ 1390 0a45 44       		.byte	0x44
+ 1391 0a46 00       		.byte	0
+ 1392 0a47 1C       		.uleb128 0x1c
+ 1393 0a48 FF060000 		.4byte	.LASF143
+ 1394 0a4c 13       		.byte	0x13
+ 1395 0a4d 5301     		.2byte	0x153
+ 1396 0a4f 03       		.byte	0x3
+ 1397 0a50 BA090000 		.4byte	0x9ba
+ 1398 0a54 11       		.uleb128 0x11
+ 1399 0a55 51050000 		.4byte	.LASF144
+ 1400 0a59 13       		.byte	0x13
+ 1401 0a5a 5E01     		.2byte	0x15e
+ 1402 0a5c 1A       		.byte	0x1a
+ 1403 0a5d 470A0000 		.4byte	0xa47
+ 1404 0a61 00       		.byte	0
+ 1405              		.section	.gnu.debuglto_.debug_abbrev,"e",%progbits
+ 1406              	.Ldebug_abbrev0:
+ 1407 0000 01       		.uleb128 0x1
+ 1408 0001 11       		.uleb128 0x11
+ 1409 0002 01       		.byte	0x1
+ 1410 0003 25       		.uleb128 0x25
+ 1411 0004 0E       		.uleb128 0xe
+ 1412 0005 13       		.uleb128 0x13
+ 1413 0006 0B       		.uleb128 0xb
+ 1414 0007 03       		.uleb128 0x3
+ 1415 0008 0E       		.uleb128 0xe
+ 1416 0009 1B       		.uleb128 0x1b
+ 1417 000a 0E       		.uleb128 0xe
+ 1418 000b 10       		.uleb128 0x10
+ 1419 000c 17       		.uleb128 0x17
+ 1420 000d 00       		.byte	0
+ 1421 000e 00       		.byte	0
+ 1422 000f 02       		.uleb128 0x2
+ 1423 0010 24       		.uleb128 0x24
+ 1424 0011 00       		.byte	0
+ 1425 0012 0B       		.uleb128 0xb
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 26
+
+
+ 1426 0013 0B       		.uleb128 0xb
+ 1427 0014 3E       		.uleb128 0x3e
+ 1428 0015 0B       		.uleb128 0xb
+ 1429 0016 03       		.uleb128 0x3
+ 1430 0017 08       		.uleb128 0x8
+ 1431 0018 00       		.byte	0
+ 1432 0019 00       		.byte	0
+ 1433 001a 03       		.uleb128 0x3
+ 1434 001b 16       		.uleb128 0x16
+ 1435 001c 00       		.byte	0
+ 1436 001d 03       		.uleb128 0x3
+ 1437 001e 0E       		.uleb128 0xe
+ 1438 001f 3A       		.uleb128 0x3a
+ 1439 0020 0B       		.uleb128 0xb
+ 1440 0021 3B       		.uleb128 0x3b
+ 1441 0022 0B       		.uleb128 0xb
+ 1442 0023 39       		.uleb128 0x39
+ 1443 0024 0B       		.uleb128 0xb
+ 1444 0025 49       		.uleb128 0x49
+ 1445 0026 13       		.uleb128 0x13
+ 1446 0027 00       		.byte	0
+ 1447 0028 00       		.byte	0
+ 1448 0029 04       		.uleb128 0x4
+ 1449 002a 24       		.uleb128 0x24
+ 1450 002b 00       		.byte	0
+ 1451 002c 0B       		.uleb128 0xb
+ 1452 002d 0B       		.uleb128 0xb
+ 1453 002e 3E       		.uleb128 0x3e
+ 1454 002f 0B       		.uleb128 0xb
+ 1455 0030 03       		.uleb128 0x3
+ 1456 0031 0E       		.uleb128 0xe
+ 1457 0032 00       		.byte	0
+ 1458 0033 00       		.byte	0
+ 1459 0034 05       		.uleb128 0x5
+ 1460 0035 26       		.uleb128 0x26
+ 1461 0036 00       		.byte	0
+ 1462 0037 49       		.uleb128 0x49
+ 1463 0038 13       		.uleb128 0x13
+ 1464 0039 00       		.byte	0
+ 1465 003a 00       		.byte	0
+ 1466 003b 06       		.uleb128 0x6
+ 1467 003c 35       		.uleb128 0x35
+ 1468 003d 00       		.byte	0
+ 1469 003e 49       		.uleb128 0x49
+ 1470 003f 13       		.uleb128 0x13
+ 1471 0040 00       		.byte	0
+ 1472 0041 00       		.byte	0
+ 1473 0042 07       		.uleb128 0x7
+ 1474 0043 13       		.uleb128 0x13
+ 1475 0044 01       		.byte	0x1
+ 1476 0045 03       		.uleb128 0x3
+ 1477 0046 0E       		.uleb128 0xe
+ 1478 0047 0B       		.uleb128 0xb
+ 1479 0048 0B       		.uleb128 0xb
+ 1480 0049 3A       		.uleb128 0x3a
+ 1481 004a 0B       		.uleb128 0xb
+ 1482 004b 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 27
+
+
+ 1483 004c 0B       		.uleb128 0xb
+ 1484 004d 39       		.uleb128 0x39
+ 1485 004e 0B       		.uleb128 0xb
+ 1486 004f 01       		.uleb128 0x1
+ 1487 0050 13       		.uleb128 0x13
+ 1488 0051 00       		.byte	0
+ 1489 0052 00       		.byte	0
+ 1490 0053 08       		.uleb128 0x8
+ 1491 0054 0D       		.uleb128 0xd
+ 1492 0055 00       		.byte	0
+ 1493 0056 03       		.uleb128 0x3
+ 1494 0057 0E       		.uleb128 0xe
+ 1495 0058 3A       		.uleb128 0x3a
+ 1496 0059 0B       		.uleb128 0xb
+ 1497 005a 3B       		.uleb128 0x3b
+ 1498 005b 0B       		.uleb128 0xb
+ 1499 005c 39       		.uleb128 0x39
+ 1500 005d 0B       		.uleb128 0xb
+ 1501 005e 49       		.uleb128 0x49
+ 1502 005f 13       		.uleb128 0x13
+ 1503 0060 38       		.uleb128 0x38
+ 1504 0061 0B       		.uleb128 0xb
+ 1505 0062 00       		.byte	0
+ 1506 0063 00       		.byte	0
+ 1507 0064 09       		.uleb128 0x9
+ 1508 0065 0D       		.uleb128 0xd
+ 1509 0066 00       		.byte	0
+ 1510 0067 03       		.uleb128 0x3
+ 1511 0068 08       		.uleb128 0x8
+ 1512 0069 3A       		.uleb128 0x3a
+ 1513 006a 0B       		.uleb128 0xb
+ 1514 006b 3B       		.uleb128 0x3b
+ 1515 006c 0B       		.uleb128 0xb
+ 1516 006d 39       		.uleb128 0x39
+ 1517 006e 0B       		.uleb128 0xb
+ 1518 006f 49       		.uleb128 0x49
+ 1519 0070 13       		.uleb128 0x13
+ 1520 0071 38       		.uleb128 0x38
+ 1521 0072 0B       		.uleb128 0xb
+ 1522 0073 00       		.byte	0
+ 1523 0074 00       		.byte	0
+ 1524 0075 0A       		.uleb128 0xa
+ 1525 0076 0D       		.uleb128 0xd
+ 1526 0077 00       		.byte	0
+ 1527 0078 03       		.uleb128 0x3
+ 1528 0079 08       		.uleb128 0x8
+ 1529 007a 3A       		.uleb128 0x3a
+ 1530 007b 0B       		.uleb128 0xb
+ 1531 007c 3B       		.uleb128 0x3b
+ 1532 007d 05       		.uleb128 0x5
+ 1533 007e 39       		.uleb128 0x39
+ 1534 007f 0B       		.uleb128 0xb
+ 1535 0080 49       		.uleb128 0x49
+ 1536 0081 13       		.uleb128 0x13
+ 1537 0082 38       		.uleb128 0x38
+ 1538 0083 0B       		.uleb128 0xb
+ 1539 0084 00       		.byte	0
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 28
+
+
+ 1540 0085 00       		.byte	0
+ 1541 0086 0B       		.uleb128 0xb
+ 1542 0087 0D       		.uleb128 0xd
+ 1543 0088 00       		.byte	0
+ 1544 0089 03       		.uleb128 0x3
+ 1545 008a 0E       		.uleb128 0xe
+ 1546 008b 3A       		.uleb128 0x3a
+ 1547 008c 0B       		.uleb128 0xb
+ 1548 008d 3B       		.uleb128 0x3b
+ 1549 008e 05       		.uleb128 0x5
+ 1550 008f 39       		.uleb128 0x39
+ 1551 0090 0B       		.uleb128 0xb
+ 1552 0091 49       		.uleb128 0x49
+ 1553 0092 13       		.uleb128 0x13
+ 1554 0093 38       		.uleb128 0x38
+ 1555 0094 0B       		.uleb128 0xb
+ 1556 0095 00       		.byte	0
+ 1557 0096 00       		.byte	0
+ 1558 0097 0C       		.uleb128 0xc
+ 1559 0098 0F       		.uleb128 0xf
+ 1560 0099 00       		.byte	0
+ 1561 009a 0B       		.uleb128 0xb
+ 1562 009b 0B       		.uleb128 0xb
+ 1563 009c 49       		.uleb128 0x49
+ 1564 009d 13       		.uleb128 0x13
+ 1565 009e 00       		.byte	0
+ 1566 009f 00       		.byte	0
+ 1567 00a0 0D       		.uleb128 0xd
+ 1568 00a1 13       		.uleb128 0x13
+ 1569 00a2 01       		.byte	0x1
+ 1570 00a3 03       		.uleb128 0x3
+ 1571 00a4 0E       		.uleb128 0xe
+ 1572 00a5 0B       		.uleb128 0xb
+ 1573 00a6 0B       		.uleb128 0xb
+ 1574 00a7 3A       		.uleb128 0x3a
+ 1575 00a8 0B       		.uleb128 0xb
+ 1576 00a9 3B       		.uleb128 0x3b
+ 1577 00aa 05       		.uleb128 0x5
+ 1578 00ab 39       		.uleb128 0x39
+ 1579 00ac 0B       		.uleb128 0xb
+ 1580 00ad 01       		.uleb128 0x1
+ 1581 00ae 13       		.uleb128 0x13
+ 1582 00af 00       		.byte	0
+ 1583 00b0 00       		.byte	0
+ 1584 00b1 0E       		.uleb128 0xe
+ 1585 00b2 15       		.uleb128 0x15
+ 1586 00b3 01       		.byte	0x1
+ 1587 00b4 27       		.uleb128 0x27
+ 1588 00b5 19       		.uleb128 0x19
+ 1589 00b6 01       		.uleb128 0x1
+ 1590 00b7 13       		.uleb128 0x13
+ 1591 00b8 00       		.byte	0
+ 1592 00b9 00       		.byte	0
+ 1593 00ba 0F       		.uleb128 0xf
+ 1594 00bb 05       		.uleb128 0x5
+ 1595 00bc 00       		.byte	0
+ 1596 00bd 49       		.uleb128 0x49
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 29
+
+
+ 1597 00be 13       		.uleb128 0x13
+ 1598 00bf 00       		.byte	0
+ 1599 00c0 00       		.byte	0
+ 1600 00c1 10       		.uleb128 0x10
+ 1601 00c2 0F       		.uleb128 0xf
+ 1602 00c3 00       		.byte	0
+ 1603 00c4 0B       		.uleb128 0xb
+ 1604 00c5 0B       		.uleb128 0xb
+ 1605 00c6 00       		.byte	0
+ 1606 00c7 00       		.byte	0
+ 1607 00c8 11       		.uleb128 0x11
+ 1608 00c9 34       		.uleb128 0x34
+ 1609 00ca 00       		.byte	0
+ 1610 00cb 03       		.uleb128 0x3
+ 1611 00cc 0E       		.uleb128 0xe
+ 1612 00cd 3A       		.uleb128 0x3a
+ 1613 00ce 0B       		.uleb128 0xb
+ 1614 00cf 3B       		.uleb128 0x3b
+ 1615 00d0 05       		.uleb128 0x5
+ 1616 00d1 39       		.uleb128 0x39
+ 1617 00d2 0B       		.uleb128 0xb
+ 1618 00d3 49       		.uleb128 0x49
+ 1619 00d4 13       		.uleb128 0x13
+ 1620 00d5 3F       		.uleb128 0x3f
+ 1621 00d6 19       		.uleb128 0x19
+ 1622 00d7 3C       		.uleb128 0x3c
+ 1623 00d8 19       		.uleb128 0x19
+ 1624 00d9 00       		.byte	0
+ 1625 00da 00       		.byte	0
+ 1626 00db 12       		.uleb128 0x12
+ 1627 00dc 34       		.uleb128 0x34
+ 1628 00dd 00       		.byte	0
+ 1629 00de 03       		.uleb128 0x3
+ 1630 00df 0E       		.uleb128 0xe
+ 1631 00e0 3A       		.uleb128 0x3a
+ 1632 00e1 0B       		.uleb128 0xb
+ 1633 00e2 3B       		.uleb128 0x3b
+ 1634 00e3 0B       		.uleb128 0xb
+ 1635 00e4 39       		.uleb128 0x39
+ 1636 00e5 0B       		.uleb128 0xb
+ 1637 00e6 49       		.uleb128 0x49
+ 1638 00e7 13       		.uleb128 0x13
+ 1639 00e8 3F       		.uleb128 0x3f
+ 1640 00e9 19       		.uleb128 0x19
+ 1641 00ea 3C       		.uleb128 0x3c
+ 1642 00eb 19       		.uleb128 0x19
+ 1643 00ec 00       		.byte	0
+ 1644 00ed 00       		.byte	0
+ 1645 00ee 13       		.uleb128 0x13
+ 1646 00ef 01       		.uleb128 0x1
+ 1647 00f0 01       		.byte	0x1
+ 1648 00f1 49       		.uleb128 0x49
+ 1649 00f2 13       		.uleb128 0x13
+ 1650 00f3 01       		.uleb128 0x1
+ 1651 00f4 13       		.uleb128 0x13
+ 1652 00f5 00       		.byte	0
+ 1653 00f6 00       		.byte	0
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 30
+
+
+ 1654 00f7 14       		.uleb128 0x14
+ 1655 00f8 21       		.uleb128 0x21
+ 1656 00f9 00       		.byte	0
+ 1657 00fa 49       		.uleb128 0x49
+ 1658 00fb 13       		.uleb128 0x13
+ 1659 00fc 2F       		.uleb128 0x2f
+ 1660 00fd 0B       		.uleb128 0xb
+ 1661 00fe 00       		.byte	0
+ 1662 00ff 00       		.byte	0
+ 1663 0100 15       		.uleb128 0x15
+ 1664 0101 13       		.uleb128 0x13
+ 1665 0102 01       		.byte	0x1
+ 1666 0103 0B       		.uleb128 0xb
+ 1667 0104 0B       		.uleb128 0xb
+ 1668 0105 3A       		.uleb128 0x3a
+ 1669 0106 0B       		.uleb128 0xb
+ 1670 0107 3B       		.uleb128 0x3b
+ 1671 0108 0B       		.uleb128 0xb
+ 1672 0109 39       		.uleb128 0x39
+ 1673 010a 0B       		.uleb128 0xb
+ 1674 010b 01       		.uleb128 0x1
+ 1675 010c 13       		.uleb128 0x13
+ 1676 010d 00       		.byte	0
+ 1677 010e 00       		.byte	0
+ 1678 010f 16       		.uleb128 0x16
+ 1679 0110 17       		.uleb128 0x17
+ 1680 0111 01       		.byte	0x1
+ 1681 0112 0B       		.uleb128 0xb
+ 1682 0113 0B       		.uleb128 0xb
+ 1683 0114 3A       		.uleb128 0x3a
+ 1684 0115 0B       		.uleb128 0xb
+ 1685 0116 3B       		.uleb128 0x3b
+ 1686 0117 0B       		.uleb128 0xb
+ 1687 0118 39       		.uleb128 0x39
+ 1688 0119 0B       		.uleb128 0xb
+ 1689 011a 01       		.uleb128 0x1
+ 1690 011b 13       		.uleb128 0x13
+ 1691 011c 00       		.byte	0
+ 1692 011d 00       		.byte	0
+ 1693 011e 17       		.uleb128 0x17
+ 1694 011f 0D       		.uleb128 0xd
+ 1695 0120 00       		.byte	0
+ 1696 0121 03       		.uleb128 0x3
+ 1697 0122 0E       		.uleb128 0xe
+ 1698 0123 3A       		.uleb128 0x3a
+ 1699 0124 0B       		.uleb128 0xb
+ 1700 0125 3B       		.uleb128 0x3b
+ 1701 0126 0B       		.uleb128 0xb
+ 1702 0127 39       		.uleb128 0x39
+ 1703 0128 0B       		.uleb128 0xb
+ 1704 0129 49       		.uleb128 0x49
+ 1705 012a 13       		.uleb128 0x13
+ 1706 012b 00       		.byte	0
+ 1707 012c 00       		.byte	0
+ 1708 012d 18       		.uleb128 0x18
+ 1709 012e 0D       		.uleb128 0xd
+ 1710 012f 00       		.byte	0
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 31
+
+
+ 1711 0130 03       		.uleb128 0x3
+ 1712 0131 0E       		.uleb128 0xe
+ 1713 0132 3A       		.uleb128 0x3a
+ 1714 0133 0B       		.uleb128 0xb
+ 1715 0134 3B       		.uleb128 0x3b
+ 1716 0135 05       		.uleb128 0x5
+ 1717 0136 39       		.uleb128 0x39
+ 1718 0137 0B       		.uleb128 0xb
+ 1719 0138 49       		.uleb128 0x49
+ 1720 0139 13       		.uleb128 0x13
+ 1721 013a 00       		.byte	0
+ 1722 013b 00       		.byte	0
+ 1723 013c 19       		.uleb128 0x19
+ 1724 013d 34       		.uleb128 0x34
+ 1725 013e 00       		.byte	0
+ 1726 013f 03       		.uleb128 0x3
+ 1727 0140 08       		.uleb128 0x8
+ 1728 0141 3A       		.uleb128 0x3a
+ 1729 0142 0B       		.uleb128 0xb
+ 1730 0143 3B       		.uleb128 0x3b
+ 1731 0144 05       		.uleb128 0x5
+ 1732 0145 39       		.uleb128 0x39
+ 1733 0146 0B       		.uleb128 0xb
+ 1734 0147 49       		.uleb128 0x49
+ 1735 0148 13       		.uleb128 0x13
+ 1736 0149 3F       		.uleb128 0x3f
+ 1737 014a 19       		.uleb128 0x19
+ 1738 014b 3C       		.uleb128 0x3c
+ 1739 014c 19       		.uleb128 0x19
+ 1740 014d 00       		.byte	0
+ 1741 014e 00       		.byte	0
+ 1742 014f 1A       		.uleb128 0x1a
+ 1743 0150 21       		.uleb128 0x21
+ 1744 0151 00       		.byte	0
+ 1745 0152 00       		.byte	0
+ 1746 0153 00       		.byte	0
+ 1747 0154 1B       		.uleb128 0x1b
+ 1748 0155 15       		.uleb128 0x15
+ 1749 0156 01       		.byte	0x1
+ 1750 0157 27       		.uleb128 0x27
+ 1751 0158 19       		.uleb128 0x19
+ 1752 0159 49       		.uleb128 0x49
+ 1753 015a 13       		.uleb128 0x13
+ 1754 015b 01       		.uleb128 0x1
+ 1755 015c 13       		.uleb128 0x13
+ 1756 015d 00       		.byte	0
+ 1757 015e 00       		.byte	0
+ 1758 015f 1C       		.uleb128 0x1c
+ 1759 0160 16       		.uleb128 0x16
+ 1760 0161 00       		.byte	0
+ 1761 0162 03       		.uleb128 0x3
+ 1762 0163 0E       		.uleb128 0xe
+ 1763 0164 3A       		.uleb128 0x3a
+ 1764 0165 0B       		.uleb128 0xb
+ 1765 0166 3B       		.uleb128 0x3b
+ 1766 0167 05       		.uleb128 0x5
+ 1767 0168 39       		.uleb128 0x39
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 32
+
+
+ 1768 0169 0B       		.uleb128 0xb
+ 1769 016a 49       		.uleb128 0x49
+ 1770 016b 13       		.uleb128 0x13
+ 1771 016c 00       		.byte	0
+ 1772 016d 00       		.byte	0
+ 1773 016e 00       		.byte	0
+ 1774              		.section	.gnu.debuglto_.debug_line,"e",%progbits
+ 1775              	.Ldebug_line0:
+ 1776 0000 27030000 		.4byte	.LELT0-.LSLT0
+ 1777              	.LSLT0:
+ 1778 0004 0400     		.2byte	0x4
+ 1779 0006 21030000 		.4byte	.LELTP0-.LASLTP0
+ 1780              	.LASLTP0:
+ 1781 000a 01       		.byte	0x1
+ 1782 000b 01       		.byte	0x1
+ 1783 000c 01       		.byte	0x1
+ 1784 000d F6       		.byte	0xf6
+ 1785 000e F2       		.byte	0xf2
+ 1786 000f 0D       		.byte	0xd
+ 1787 0010 00       		.byte	0
+ 1788 0011 01       		.byte	0x1
+ 1789 0012 01       		.byte	0x1
+ 1790 0013 01       		.byte	0x1
+ 1791 0014 01       		.byte	0x1
+ 1792 0015 00       		.byte	0
+ 1793 0016 00       		.byte	0
+ 1794 0017 00       		.byte	0
+ 1795 0018 01       		.byte	0x1
+ 1796 0019 00       		.byte	0
+ 1797 001a 00       		.byte	0
+ 1798 001b 01       		.byte	0x1
+ 1799 001c 2E2E2F2E 		.ascii	"../../chibios203/os/common/ext/ARM/CMSIS/Core/Inclu"
+ 1799      2E2F6368 
+ 1799      6962696F 
+ 1799      73323033 
+ 1799      2F6F732F 
+ 1800 004f 6465     		.ascii	"de"
+ 1801 0051 00       		.byte	0
+ 1802 0052 2E2E2F2E 		.ascii	"../../chibios203/os/common/ext/ST/STM32L4xx"
+ 1802      2E2F6368 
+ 1802      6962696F 
+ 1802      73323033 
+ 1802      2F6F732F 
+ 1803 007d 00       		.byte	0
+ 1804 007e 2E2E2F2E 		.ascii	"../../chibios203/os/common/ports/ARMCMx/compilers/G"
+ 1804      2E2F6368 
+ 1804      6962696F 
+ 1804      73323033 
+ 1804      2F6F732F 
+ 1805 00b1 4343     		.ascii	"CC"
+ 1806 00b3 00       		.byte	0
+ 1807 00b4 2E2E2F2E 		.ascii	"../../chibios203/os/common/ports/ARMCMx"
+ 1807      2E2F6368 
+ 1807      6962696F 
+ 1807      73323033 
+ 1807      2F6F732F 
+ 1808 00db 00       		.byte	0
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 33
+
+
+ 1809 00dc 2E2E2F2E 		.ascii	"../../chibios203/os/oslib/include"
+ 1809      2E2F6368 
+ 1809      6962696F 
+ 1809      73323033 
+ 1809      2F6F732F 
+ 1810 00fd 00       		.byte	0
+ 1811 00fe 2E2E2F2E 		.ascii	"../../chibios203/os/rt/include"
+ 1811      2E2F6368 
+ 1811      6962696F 
+ 1811      73323033 
+ 1811      2F6F732F 
+ 1812 011c 00       		.byte	0
+ 1813 011d 633A5C63 		.ascii	"c:\\chibistudio\\tools\\gnu tools arm embedded\\9.0"
+ 1813      68696269 
+ 1813      73747564 
+ 1813      696F5C74 
+ 1813      6F6F6C73 
+ 1814 014c 20323031 		.ascii	" 2019q4\\arm-none-eabi\\include\\machine"
+ 1814      3971345C 
+ 1814      61726D2D 
+ 1814      6E6F6E65 
+ 1814      2D656162 
+ 1815 0171 00       		.byte	0
+ 1816 0172 633A5C63 		.ascii	"c:\\chibistudio\\tools\\gnu tools arm embedded\\9.0"
+ 1816      68696269 
+ 1816      73747564 
+ 1816      696F5C74 
+ 1816      6F6F6C73 
+ 1817 01a1 20323031 		.ascii	" 2019q4\\arm-none-eabi\\include\\sys"
+ 1817      3971345C 
+ 1817      61726D2D 
+ 1817      6E6F6E65 
+ 1817      2D656162 
+ 1818 01c2 00       		.byte	0
+ 1819 01c3 633A5C63 		.ascii	"c:\\chibistudio\\tools\\gnu tools arm embedded\\9.0"
+ 1819      68696269 
+ 1819      73747564 
+ 1819      696F5C74 
+ 1819      6F6F6C73 
+ 1820 01f2 20323031 		.ascii	" 2019q4\\lib\\gcc\\arm-none-eabi\\9.2.1\\include"
+ 1820      3971345C 
+ 1820      6C69625C 
+ 1820      6763635C 
+ 1820      61726D2D 
+ 1821 021d 00       		.byte	0
+ 1822 021e 00       		.byte	0
+ 1823 021f 73746464 		.ascii	"stddef.h\000"
+ 1823      65662E68 
+ 1823      00
+ 1824 0228 09       		.uleb128 0x9
+ 1825 0229 00       		.uleb128 0
+ 1826 022a 00       		.uleb128 0
+ 1827 022b 5F646566 		.ascii	"_default_types.h\000"
+ 1827      61756C74 
+ 1827      5F747970 
+ 1827      65732E68 
+ 1827      00
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 34
+
+
+ 1828 023c 07       		.uleb128 0x7
+ 1829 023d 00       		.uleb128 0
+ 1830 023e 00       		.uleb128 0
+ 1831 023f 5F737464 		.ascii	"_stdint.h\000"
+ 1831      696E742E 
+ 1831      6800
+ 1832 0249 08       		.uleb128 0x8
+ 1833 024a 00       		.uleb128 0
+ 1834 024b 00       		.uleb128 0
+ 1835 024c 63687479 		.ascii	"chtypes.h\000"
+ 1835      7065732E 
+ 1835      6800
+ 1836 0256 03       		.uleb128 0x3
+ 1837 0257 00       		.uleb128 0
+ 1838 0258 00       		.uleb128 0
+ 1839 0259 63687379 		.ascii	"chsystypes.h\000"
+ 1839      73747970 
+ 1839      65732E68 
+ 1839      00
+ 1840 0266 06       		.uleb128 0x6
+ 1841 0267 00       		.uleb128 0
+ 1842 0268 00       		.uleb128 0
+ 1843 0269 63687363 		.ascii	"chschd.h\000"
+ 1843      68642E68 
+ 1843      00
+ 1844 0272 06       		.uleb128 0x6
+ 1845 0273 00       		.uleb128 0
+ 1846 0274 00       		.uleb128 0
+ 1847 0275 63687469 		.ascii	"chtime.h\000"
+ 1847      6D652E68 
+ 1847      00
+ 1848 027e 06       		.uleb128 0x6
+ 1849 027f 00       		.uleb128 0
+ 1850 0280 00       		.uleb128 0
+ 1851 0281 636F7265 		.ascii	"core_cm4.h\000"
+ 1851      5F636D34 
+ 1851      2E6800
+ 1852 028c 01       		.uleb128 0x1
+ 1853 028d 00       		.uleb128 0
+ 1854 028e 00       		.uleb128 0
+ 1855 028f 73797374 		.ascii	"system_stm32l4xx.h\000"
+ 1855      656D5F73 
+ 1855      746D3332 
+ 1855      6C347878 
+ 1855      2E6800
+ 1856 02a2 02       		.uleb128 0x2
+ 1857 02a3 00       		.uleb128 0
+ 1858 02a4 00       		.uleb128 0
+ 1859 02a5 6368636F 		.ascii	"chcore.h\000"
+ 1859      72652E68 
+ 1859      00
+ 1860 02ae 04       		.uleb128 0x4
+ 1861 02af 00       		.uleb128 0
+ 1862 02b0 00       		.uleb128 0
+ 1863 02b1 6368636F 		.ascii	"chcore_v7m.h\000"
+ 1863      72655F76 
+ 1863      376D2E68 
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 35
+
+
+ 1863      00
+ 1864 02be 04       		.uleb128 0x4
+ 1865 02bf 00       		.uleb128 0
+ 1866 02c0 00       		.uleb128 0
+ 1867 02c1 6368746D 		.ascii	"chtm.h\000"
+ 1867      2E6800
+ 1868 02c8 06       		.uleb128 0x6
+ 1869 02c9 00       		.uleb128 0
+ 1870 02ca 00       		.uleb128 0
+ 1871 02cb 63687365 		.ascii	"chsem.h\000"
+ 1871      6D2E6800 
+ 1872 02d3 06       		.uleb128 0x6
+ 1873 02d4 00       		.uleb128 0
+ 1874 02d5 00       		.uleb128 0
+ 1875 02d6 63686D74 		.ascii	"chmtx.h\000"
+ 1875      782E6800 
+ 1876 02de 06       		.uleb128 0x6
+ 1877 02df 00       		.uleb128 0
+ 1878 02e0 00       		.uleb128 0
+ 1879 02e1 63687379 		.ascii	"chsys.h\000"
+ 1879      732E6800 
+ 1880 02e9 06       		.uleb128 0x6
+ 1881 02ea 00       		.uleb128 0
+ 1882 02eb 00       		.uleb128 0
+ 1883 02ec 63687265 		.ascii	"chregistry.h\000"
+ 1883      67697374 
+ 1883      72792E68 
+ 1883      00
+ 1884 02f9 06       		.uleb128 0x6
+ 1885 02fa 00       		.uleb128 0
+ 1886 02fb 00       		.uleb128 0
+ 1887 02fc 63686D65 		.ascii	"chmemcore.h\000"
+ 1887      6D636F72 
+ 1887      652E6800 
+ 1888 0308 05       		.uleb128 0x5
+ 1889 0309 00       		.uleb128 0
+ 1890 030a 00       		.uleb128 0
+ 1891 030b 63686D65 		.ascii	"chmempools.h\000"
+ 1891      6D706F6F 
+ 1891      6C732E68 
+ 1891      00
+ 1892 0318 05       		.uleb128 0x5
+ 1893 0319 00       		.uleb128 0
+ 1894 031a 00       		.uleb128 0
+ 1895 031b 63686661 		.ascii	"chfactory.h\000"
+ 1895      63746F72 
+ 1895      792E6800 
+ 1896 0327 05       		.uleb128 0x5
+ 1897 0328 00       		.uleb128 0
+ 1898 0329 00       		.uleb128 0
+ 1899 032a 00       		.byte	0
+ 1900              	.LELTP0:
+ 1901              	.LELT0:
+ 1902              		.section	.gnu.debuglto_.debug_str,"eMS",%progbits,1
+ 1903              	.LASF54:
+ 1904 0000 72656164 		.ascii	"ready_list_t\000"
+ 1904      795F6C69 
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 36
+
+
+ 1904      73745F74 
+ 1904      00
+ 1905              	.LASF4:
+ 1906 000d 73697A65 		.ascii	"size_t\000"
+ 1906      5F7400
+ 1907              	.LASF60:
+ 1908 0014 64656C74 		.ascii	"delta\000"
+ 1908      6100
+ 1909              	.LASF85:
+ 1910 001a 7264796D 		.ascii	"rdymsg\000"
+ 1910      736700
+ 1911              	.LASF20:
+ 1912 0021 75696E74 		.ascii	"uint64_t\000"
+ 1912      36345F74 
+ 1912      00
+ 1913              	.LASF5:
+ 1914 002a 5F5F7569 		.ascii	"__uint8_t\000"
+ 1914      6E74385F 
+ 1914      7400
+ 1915              	.LASF53:
+ 1916 0034 70726576 		.ascii	"prev\000"
+ 1916      00
+ 1917              	.LASF81:
+ 1918 0039 706F7274 		.ascii	"port_intctx\000"
+ 1918      5F696E74 
+ 1918      63747800 
+ 1919              	.LASF65:
+ 1920 0045 73797374 		.ascii	"system_debug_t\000"
+ 1920      656D5F64 
+ 1920      65627567 
+ 1920      5F7400
+ 1921              	.LASF128:
+ 1922 0054 70726F76 		.ascii	"provider\000"
+ 1922      69646572 
+ 1922      00
+ 1923              	.LASF138:
+ 1924 005d 73656D5F 		.ascii	"sem_list\000"
+ 1924      6C697374 
+ 1924      00
+ 1925              	.LASF120:
+ 1926 0066 6D656D67 		.ascii	"memgetfunc_t\000"
+ 1926      65746675 
+ 1926      6E635F74 
+ 1926      00
+ 1927              	.LASF146:
+ 1928 0073 2E2E2F2E 		.ascii	"../../chibios203/os/rt/src/chtrace.c\000"
+ 1928      2E2F6368 
+ 1928      6962696F 
+ 1928      73323033 
+ 1928      2F6F732F 
+ 1929              	.LASF15:
+ 1930 0098 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1930      206C6F6E 
+ 1930      6720756E 
+ 1930      7369676E 
+ 1930      65642069 
+ 1931              	.LASF86:
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 37
+
+
+ 1932 00af 65786974 		.ascii	"exitcode\000"
+ 1932      636F6465 
+ 1932      00
+ 1933              	.LASF72:
+ 1934 00b8 6D61696E 		.ascii	"mainthread\000"
+ 1934      74687265 
+ 1934      616400
+ 1935              	.LASF89:
+ 1936 00c3 73656E74 		.ascii	"sentmsg\000"
+ 1936      6D736700 
+ 1937              	.LASF62:
+ 1938 00cb 76697274 		.ascii	"virtual_timers_list_t\000"
+ 1938      75616C5F 
+ 1938      74696D65 
+ 1938      72735F6C 
+ 1938      6973745F 
+ 1939              	.LASF75:
+ 1940 00e1 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1940      52784275 
+ 1940      66666572 
+ 1940      00
+ 1941              	.LASF131:
+ 1942 00ee 64796E5F 		.ascii	"dyn_element_t\000"
+ 1942      656C656D 
+ 1942      656E745F 
+ 1942      7400
+ 1943              	.LASF50:
+ 1944 00fc 6E657874 		.ascii	"next\000"
+ 1944      00
+ 1945              	.LASF52:
+ 1946 0101 63685F74 		.ascii	"ch_threads_queue\000"
+ 1946      68726561 
+ 1946      64735F71 
+ 1946      75657565 
+ 1946      00
+ 1947              	.LASF1:
+ 1948 0112 6C6F6E67 		.ascii	"long long int\000"
+ 1948      206C6F6E 
+ 1948      6720696E 
+ 1948      7400
+ 1949              	.LASF3:
+ 1950 0120 7369676E 		.ascii	"signed char\000"
+ 1950      65642063 
+ 1950      68617200 
+ 1951              	.LASF100:
+ 1952 012c 73697A65 		.ascii	"size\000"
+ 1952      00
+ 1953              	.LASF70:
+ 1954 0131 726C6973 		.ascii	"rlist\000"
+ 1954      7400
+ 1955              	.LASF71:
+ 1956 0137 76746C69 		.ascii	"vtlist\000"
+ 1956      737400
+ 1957              	.LASF41:
+ 1958 013e 6D736771 		.ascii	"msgqueue\000"
+ 1958      75657565 
+ 1958      00
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 38
+
+
+ 1959              	.LASF37:
+ 1960 0147 73746174 		.ascii	"state\000"
+ 1960      6500
+ 1961              	.LASF11:
+ 1962 014d 6C6F6E67 		.ascii	"long int\000"
+ 1962      20696E74 
+ 1962      00
+ 1963              	.LASF23:
+ 1964 0156 74737461 		.ascii	"tstate_t\000"
+ 1964      74655F74 
+ 1964      00
+ 1965              	.LASF61:
+ 1966 015f 66756E63 		.ascii	"func\000"
+ 1966      00
+ 1967              	.LASF98:
+ 1968 0164 6964656E 		.ascii	"identifier\000"
+ 1968      74696669 
+ 1968      657200
+ 1969              	.LASF121:
+ 1970 016f 62617365 		.ascii	"basemem\000"
+ 1970      6D656D00 
+ 1971              	.LASF17:
+ 1972 0177 75696E74 		.ascii	"uint16_t\000"
+ 1972      31365F74 
+ 1972      00
+ 1973              	.LASF116:
+ 1974 0180 63686465 		.ascii	"chdebug_t\000"
+ 1974      6275675F 
+ 1974      7400
+ 1975              	.LASF114:
+ 1976 018a 6F66665F 		.ascii	"off_preempt\000"
+ 1976      70726565 
+ 1976      6D707400 
+ 1977              	.LASF12:
+ 1978 0196 5F5F7569 		.ascii	"__uint32_t\000"
+ 1978      6E743332 
+ 1978      5F7400
+ 1979              	.LASF140:
+ 1980 01a1 6D62785F 		.ascii	"mbx_list\000"
+ 1980      6C697374 
+ 1980      00
+ 1981              	.LASF66:
+ 1982 01aa 63685F73 		.ascii	"ch_system_debug\000"
+ 1982      79737465 
+ 1982      6D5F6465 
+ 1982      62756700 
+ 1983              	.LASF40:
+ 1984 01ba 77616974 		.ascii	"waiting\000"
+ 1984      696E6700 
+ 1985              	.LASF78:
+ 1986 01c2 41504250 		.ascii	"APBPrescTable\000"
+ 1986      72657363 
+ 1986      5461626C 
+ 1986      6500
+ 1987              	.LASF99:
+ 1988 01d0 7A65726F 		.ascii	"zero\000"
+ 1988      00
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 39
+
+
+ 1989              	.LASF118:
+ 1990 01d5 6D757465 		.ascii	"mutex_t\000"
+ 1990      785F7400 
+ 1991              	.LASF127:
+ 1992 01dd 616C6967 		.ascii	"align\000"
+ 1992      6E00
+ 1993              	.LASF74:
+ 1994 01e3 73797369 		.ascii	"sysinterval_t\000"
+ 1994      6E746572 
+ 1994      76616C5F 
+ 1994      7400
+ 1995              	.LASF28:
+ 1996 01f1 636E745F 		.ascii	"cnt_t\000"
+ 1996      7400
+ 1997              	.LASF0:
+ 1998 01f7 756E7369 		.ascii	"unsigned int\000"
+ 1998      676E6564 
+ 1998      20696E74 
+ 1998      00
+ 1999              	.LASF76:
+ 2000 0204 53797374 		.ascii	"SystemCoreClock\000"
+ 2000      656D436F 
+ 2000      7265436C 
+ 2000      6F636B00 
+ 2001              	.LASF90:
+ 2002 0214 77747365 		.ascii	"wtsemp\000"
+ 2002      6D7000
+ 2003              	.LASF88:
+ 2004 021b 77747472 		.ascii	"wttrp\000"
+ 2004      7000
+ 2005              	.LASF122:
+ 2006 0221 746F706D 		.ascii	"topmem\000"
+ 2006      656D00
+ 2007              	.LASF117:
+ 2008 0228 63685F64 		.ascii	"ch_debug\000"
+ 2008      65627567 
+ 2008      00
+ 2009              	.LASF129:
+ 2010 0231 6D656D6F 		.ascii	"memory_pool_t\000"
+ 2010      72795F70 
+ 2010      6F6F6C5F 
+ 2010      7400
+ 2011              	.LASF147:
+ 2012 023f 433A5C43 		.ascii	"C:\\ChibiStudio\\workspace_user\\RT-STM32L476RG-NUC"
+ 2012      68696269 
+ 2012      53747564 
+ 2012      696F5C77 
+ 2012      6F726B73 
+ 2013 026f 4C454F36 		.ascii	"LEO64_UART\000"
+ 2013      345F5541 
+ 2013      525400
+ 2014              	.LASF31:
+ 2015 027a 71756575 		.ascii	"queue\000"
+ 2015      6500
+ 2016              	.LASF45:
+ 2017 0280 6D706F6F 		.ascii	"mpool\000"
+ 2017      6C00
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 40
+
+
+ 2018              	.LASF113:
+ 2019 0286 6F66665F 		.ascii	"off_refs\000"
+ 2019      72656673 
+ 2019      00
+ 2020              	.LASF137:
+ 2021 028f 6275665F 		.ascii	"buf_list\000"
+ 2021      6C697374 
+ 2021      00
+ 2022              	.LASF35:
+ 2023 0298 6E616D65 		.ascii	"name\000"
+ 2023      00
+ 2024              	.LASF48:
+ 2025 029d 63685F74 		.ascii	"ch_thread\000"
+ 2025      68726561 
+ 2025      6400
+ 2026              	.LASF26:
+ 2027 02a7 6D73675F 		.ascii	"msg_t\000"
+ 2027      7400
+ 2028              	.LASF29:
+ 2029 02ad 75636E74 		.ascii	"ucnt_t\000"
+ 2029      5F7400
+ 2030              	.LASF42:
+ 2031 02b4 6570656E 		.ascii	"epending\000"
+ 2031      64696E67 
+ 2031      00
+ 2032              	.LASF133:
+ 2033 02bd 64796E5F 		.ascii	"dyn_list_t\000"
+ 2033      6C697374 
+ 2033      5F7400
+ 2034              	.LASF68:
+ 2035 02c8 63685F73 		.ascii	"ch_system_t\000"
+ 2035      79737465 
+ 2035      6D5F7400 
+ 2036              	.LASF106:
+ 2037 02d4 6F66665F 		.ascii	"off_ctx\000"
+ 2037      63747800 
+ 2038              	.LASF145:
+ 2039 02dc 474E5520 		.ascii	"GNU C17 9.2.1 20191025 (release) [ARM/arm-9-branch "
+ 2039      43313720 
+ 2039      392E322E 
+ 2039      31203230 
+ 2039      31393130 
+ 2040 030f 72657669 		.ascii	"revision 277599] -mcpu=cortex-m4 -mthumb -mfloat-ab"
+ 2040      73696F6E 
+ 2040      20323737 
+ 2040      3539395D 
+ 2040      202D6D63 
+ 2041 0342 693D736F 		.ascii	"i=soft -march=armv7e-m -ggdb -O0 -fomit-frame-point"
+ 2041      6674202D 
+ 2041      6D617263 
+ 2041      683D6172 
+ 2041      6D763765 
+ 2042 0375 6572202D 		.ascii	"er -falign-functions=16 -ffunction-sections -fdata-"
+ 2042      66616C69 
+ 2042      676E2D66 
+ 2042      756E6374 
+ 2042      696F6E73 
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 41
+
+
+ 2043 03a8 73656374 		.ascii	"sections -fno-common -flto\000"
+ 2043      696F6E73 
+ 2043      202D666E 
+ 2043      6F2D636F 
+ 2043      6D6D6F6E 
+ 2044              	.LASF22:
+ 2045 03c3 746D6F64 		.ascii	"tmode_t\000"
+ 2045      655F7400 
+ 2046              	.LASF55:
+ 2047 03cb 63685F72 		.ascii	"ch_ready_list\000"
+ 2047      65616479 
+ 2047      5F6C6973 
+ 2047      7400
+ 2048              	.LASF27:
+ 2049 03d9 6576656E 		.ascii	"eventmask_t\000"
+ 2049      746D6173 
+ 2049      6B5F7400 
+ 2050              	.LASF77:
+ 2051 03e5 41484250 		.ascii	"AHBPrescTable\000"
+ 2051      72657363 
+ 2051      5461626C 
+ 2051      6500
+ 2052              	.LASF10:
+ 2053 03f3 5F5F696E 		.ascii	"__int32_t\000"
+ 2053      7433325F 
+ 2053      7400
+ 2054              	.LASF80:
+ 2055 03fd 73746B61 		.ascii	"stkalign_t\000"
+ 2055      6C69676E 
+ 2055      5F7400
+ 2056              	.LASF33:
+ 2057 0408 6E657765 		.ascii	"newer\000"
+ 2057      7200
+ 2058              	.LASF44:
+ 2059 040e 7265616C 		.ascii	"realprio\000"
+ 2059      7072696F 
+ 2059      00
+ 2060              	.LASF101:
+ 2061 0417 76657273 		.ascii	"version\000"
+ 2061      696F6E00 
+ 2062              	.LASF21:
+ 2063 041f 7274636E 		.ascii	"rtcnt_t\000"
+ 2063      745F7400 
+ 2064              	.LASF46:
+ 2065 0427 74687265 		.ascii	"thread_reference_t\000"
+ 2065      61645F72 
+ 2065      65666572 
+ 2065      656E6365 
+ 2065      5F7400
+ 2066              	.LASF63:
+ 2067 043a 63685F76 		.ascii	"ch_virtual_timers_list\000"
+ 2067      69727475 
+ 2067      616C5F74 
+ 2067      696D6572 
+ 2067      735F6C69 
+ 2068              	.LASF2:
+ 2069 0451 6C6F6E67 		.ascii	"long double\000"
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 42
+
+
+ 2069      20646F75 
+ 2069      626C6500 
+ 2070              	.LASF132:
+ 2071 045d 63685F64 		.ascii	"ch_dyn_list\000"
+ 2071      796E5F6C 
+ 2071      69737400 
+ 2072              	.LASF107:
+ 2073 0469 6F66665F 		.ascii	"off_newer\000"
+ 2073      6E657765 
+ 2073      7200
+ 2074              	.LASF82:
+ 2075 0473 706F7274 		.ascii	"port_context\000"
+ 2075      5F636F6E 
+ 2075      74657874 
+ 2075      00
+ 2076              	.LASF84:
+ 2077 0480 746D5F63 		.ascii	"tm_calibration_t\000"
+ 2077      616C6962 
+ 2077      72617469 
+ 2077      6F6E5F74 
+ 2077      00
+ 2078              	.LASF32:
+ 2079 0491 7072696F 		.ascii	"prio\000"
+ 2079      00
+ 2080              	.LASF139:
+ 2081 0496 73656D5F 		.ascii	"sem_pool\000"
+ 2081      706F6F6C 
+ 2081      00
+ 2082              	.LASF56:
+ 2083 049f 63757272 		.ascii	"current\000"
+ 2083      656E7400 
+ 2084              	.LASF14:
+ 2085 04a7 5F5F7569 		.ascii	"__uint64_t\000"
+ 2085      6E743634 
+ 2085      5F7400
+ 2086              	.LASF123:
+ 2087 04b2 6D656D63 		.ascii	"memcore_t\000"
+ 2087      6F72655F 
+ 2087      7400
+ 2088              	.LASF24:
+ 2089 04bc 74726566 		.ascii	"trefs_t\000"
+ 2089      735F7400 
+ 2090              	.LASF39:
+ 2091 04c4 72656673 		.ascii	"refs\000"
+ 2091      00
+ 2092              	.LASF58:
+ 2093 04c9 76697274 		.ascii	"virtual_timer_t\000"
+ 2093      75616C5F 
+ 2093      74696D65 
+ 2093      725F7400 
+ 2094              	.LASF130:
+ 2095 04d9 63685F64 		.ascii	"ch_dyn_element\000"
+ 2095      796E5F65 
+ 2095      6C656D65 
+ 2095      6E7400
+ 2096              	.LASF25:
+ 2097 04e8 74707269 		.ascii	"tprio_t\000"
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 43
+
+
+ 2097      6F5F7400 
+ 2098              	.LASF104:
+ 2099 04f0 74687265 		.ascii	"threadsize\000"
+ 2099      61647369 
+ 2099      7A6500
+ 2100              	.LASF119:
+ 2101 04fb 5F426F6F 		.ascii	"_Bool\000"
+ 2101      6C00
+ 2102              	.LASF18:
+ 2103 0501 696E7433 		.ascii	"int32_t\000"
+ 2103      325F7400 
+ 2104              	.LASF6:
+ 2105 0509 756E7369 		.ascii	"unsigned char\000"
+ 2105      676E6564 
+ 2105      20636861 
+ 2105      7200
+ 2106              	.LASF105:
+ 2107 0517 6F66665F 		.ascii	"off_prio\000"
+ 2107      7072696F 
+ 2107      00
+ 2108              	.LASF110:
+ 2109 0520 6F66665F 		.ascii	"off_stklimit\000"
+ 2109      73746B6C 
+ 2109      696D6974 
+ 2109      00
+ 2110              	.LASF7:
+ 2111 052d 73686F72 		.ascii	"short int\000"
+ 2111      7420696E 
+ 2111      7400
+ 2112              	.LASF64:
+ 2113 0537 6C617374 		.ascii	"lasttime\000"
+ 2113      74696D65 
+ 2113      00
+ 2114              	.LASF92:
+ 2115 0540 65776D61 		.ascii	"ewmask\000"
+ 2115      736B00
+ 2116              	.LASF69:
+ 2117 0547 63685F73 		.ascii	"ch_system\000"
+ 2117      79737465 
+ 2117      6D00
+ 2118              	.LASF144:
+ 2119 0551 63685F66 		.ascii	"ch_factory\000"
+ 2119      6163746F 
+ 2119      727900
+ 2120              	.LASF136:
+ 2121 055c 6F626A5F 		.ascii	"obj_pool\000"
+ 2121      706F6F6C 
+ 2121      00
+ 2122              	.LASF59:
+ 2123 0565 63685F76 		.ascii	"ch_virtual_timer\000"
+ 2123      69727475 
+ 2123      616C5F74 
+ 2123      696D6572 
+ 2123      00
+ 2124              	.LASF93:
+ 2125 0576 63685F73 		.ascii	"ch_semaphore\000"
+ 2125      656D6170 
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 44
+
+
+ 2125      686F7265 
+ 2125      00
+ 2126              	.LASF115:
+ 2127 0583 6F66665F 		.ascii	"off_time\000"
+ 2127      74696D65 
+ 2127      00
+ 2128              	.LASF97:
+ 2129 058c 63685F69 		.ascii	"ch_idle_thread_wa\000"
+ 2129      646C655F 
+ 2129      74687265 
+ 2129      61645F77 
+ 2129      6100
+ 2130              	.LASF103:
+ 2131 059e 74696D65 		.ascii	"timesize\000"
+ 2131      73697A65 
+ 2131      00
+ 2132              	.LASF142:
+ 2133 05a7 70697065 		.ascii	"pipe_list\000"
+ 2133      5F6C6973 
+ 2133      7400
+ 2134              	.LASF19:
+ 2135 05b1 75696E74 		.ascii	"uint32_t\000"
+ 2135      33325F74 
+ 2135      00
+ 2136              	.LASF91:
+ 2137 05ba 77746D74 		.ascii	"wtmtxp\000"
+ 2137      787000
+ 2138              	.LASF49:
+ 2139 05c1 63685F74 		.ascii	"ch_threads_list\000"
+ 2139      68726561 
+ 2139      64735F6C 
+ 2139      69737400 
+ 2140              	.LASF95:
+ 2141 05d1 6F776E65 		.ascii	"owner\000"
+ 2141      7200
+ 2142              	.LASF13:
+ 2143 05d7 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2143      20756E73 
+ 2143      69676E65 
+ 2143      6420696E 
+ 2143      7400
+ 2144              	.LASF36:
+ 2145 05e9 77616261 		.ascii	"wabase\000"
+ 2145      736500
+ 2146              	.LASF96:
+ 2147 05f0 63686172 		.ascii	"char\000"
+ 2147      00
+ 2148              	.LASF34:
+ 2149 05f5 6F6C6465 		.ascii	"older\000"
+ 2149      7200
+ 2150              	.LASF135:
+ 2151 05fb 6F626A5F 		.ascii	"obj_list\000"
+ 2151      6C697374 
+ 2151      00
+ 2152              	.LASF8:
+ 2153 0604 5F5F7569 		.ascii	"__uint16_t\000"
+ 2153      6E743136 
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 45
+
+
+ 2153      5F7400
+ 2154              	.LASF30:
+ 2155 060f 74687265 		.ascii	"thread_t\000"
+ 2155      61645F74 
+ 2155      00
+ 2156              	.LASF124:
+ 2157 0618 63685F6D 		.ascii	"ch_memcore\000"
+ 2157      656D636F 
+ 2157      726500
+ 2158              	.LASF73:
+ 2159 0623 73797374 		.ascii	"systime_t\000"
+ 2159      696D655F 
+ 2159      7400
+ 2160              	.LASF57:
+ 2161 062d 76746675 		.ascii	"vtfunc_t\000"
+ 2161      6E635F74 
+ 2161      00
+ 2162              	.LASF67:
+ 2163 0636 70616E69 		.ascii	"panic_msg\000"
+ 2163      635F6D73 
+ 2163      6700
+ 2164              	.LASF83:
+ 2165 0640 6F666673 		.ascii	"offset\000"
+ 2165      657400
+ 2166              	.LASF94:
+ 2167 0647 63685F6D 		.ascii	"ch_mutex\000"
+ 2167      75746578 
+ 2167      00
+ 2168              	.LASF108:
+ 2169 0650 6F66665F 		.ascii	"off_older\000"
+ 2169      6F6C6465 
+ 2169      7200
+ 2170              	.LASF9:
+ 2171 065a 73686F72 		.ascii	"short unsigned int\000"
+ 2171      7420756E 
+ 2171      7369676E 
+ 2171      65642069 
+ 2171      6E7400
+ 2172              	.LASF126:
+ 2173 066d 6F626A65 		.ascii	"object_size\000"
+ 2173      63745F73 
+ 2173      697A6500 
+ 2174              	.LASF102:
+ 2175 0679 70747273 		.ascii	"ptrsize\000"
+ 2175      697A6500 
+ 2176              	.LASF134:
+ 2177 0681 63685F6F 		.ascii	"ch_objects_factory\000"
+ 2177      626A6563 
+ 2177      74735F66 
+ 2177      6163746F 
+ 2177      727900
+ 2178              	.LASF51:
+ 2179 0694 74687265 		.ascii	"threads_queue_t\000"
+ 2179      6164735F 
+ 2179      71756575 
+ 2179      655F7400 
+ 2180              	.LASF125:
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 46
+
+
+ 2181 06a4 706F6F6C 		.ascii	"pool_header\000"
+ 2181      5F686561 
+ 2181      64657200 
+ 2182              	.LASF109:
+ 2183 06b0 6F66665F 		.ascii	"off_name\000"
+ 2183      6E616D65 
+ 2183      00
+ 2184              	.LASF79:
+ 2185 06b9 4D534952 		.ascii	"MSIRangeTable\000"
+ 2185      616E6765 
+ 2185      5461626C 
+ 2185      6500
+ 2186              	.LASF16:
+ 2187 06c7 75696E74 		.ascii	"uint8_t\000"
+ 2187      385F7400 
+ 2188              	.LASF38:
+ 2189 06cf 666C6167 		.ascii	"flags\000"
+ 2189      7300
+ 2190              	.LASF141:
+ 2191 06d5 6669666F 		.ascii	"fifo_list\000"
+ 2191      5F6C6973 
+ 2191      7400
+ 2192              	.LASF87:
+ 2193 06df 77746F62 		.ascii	"wtobjp\000"
+ 2193      6A7000
+ 2194              	.LASF47:
+ 2195 06e6 74687265 		.ascii	"threads_list_t\000"
+ 2195      6164735F 
+ 2195      6C697374 
+ 2195      5F7400
+ 2196              	.LASF111:
+ 2197 06f5 6F66665F 		.ascii	"off_state\000"
+ 2197      73746174 
+ 2197      6500
+ 2198              	.LASF143:
+ 2199 06ff 6F626A65 		.ascii	"objects_factory_t\000"
+ 2199      6374735F 
+ 2199      66616374 
+ 2199      6F72795F 
+ 2199      7400
+ 2200              	.LASF112:
+ 2201 0711 6F66665F 		.ascii	"off_flags\000"
+ 2201      666C6167 
+ 2201      7300
+ 2202              	.LASF43:
+ 2203 071b 6D74786C 		.ascii	"mtxlist\000"
+ 2203      69737400 
+ 2204              		.text
+ 2205              		.section	.gnu.lto_.inline.8b127e33,"e",%progbits
+ 2206 0000 789CE360 		.ascii	"x\234\343``d`b@\006\000\000\316\000\014"
+ 2206      60646062 
+ 2206      40060000 
+ 2206      CE000C
+ 2207              		.text
+ 2208              		.section	.gnu.lto_.jmpfuncs.8b127e33,"e",%progbits
+ 2209 0000 789CE360 		.ascii	"x\234\343``d`b@\006\000\000\316\000\014"
+ 2209      60646062 
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 47
+
+
+ 2209      40060000 
+ 2209      CE000C
+ 2210              		.text
+ 2211              		.section	.gnu.lto_.symbol_nodes.8b127e33,"e",%progbits
+ 2212 0000 789CE360 		.ascii	"x\234\343``d`b\000\001\000\000n\000\014"
+ 2212      60646062 
+ 2212      00010000 
+ 2212      6E000C
+ 2213              		.text
+ 2214              		.section	.gnu.lto_.refs.8b127e33,"e",%progbits
+ 2215 0000 789CE360 		.ascii	"x\234\343``\004B \000\000\000]\000\013"
+ 2215      60044220 
+ 2215      0000005D 
+ 2215      000B
+ 2216              		.text
+ 2217              		.section	.gnu.lto_.decls.8b127e33,"e",%progbits
+ 2218 0000 789CE360 		.ascii	"x\234\343``d\000\001\020\251\002\304\377\201\000\304"
+ 2218      60640001 
+ 2218      10A902C4 
+ 2218      FF8100C4 
+ 2219 0010 BEC84000 		.ascii	"\276\310@\000\000\000\3015\004\375"
+ 2219      0000C135 
+ 2219      04FD
+ 2220              		.text
+ 2221              		.section	.gnu.lto_.symtab.8b127e33,"e",%progbits
+ 2222              		.text
+ 2223              		.section	.gnu.lto_.opts,"e",%progbits
+ 2224 0000 272D666E 		.ascii	"'-fno-openmp' '-fno-openacc' '-fno-pie' '-mcpu=cort"
+ 2224      6F2D6F70 
+ 2224      656E6D70 
+ 2224      2720272D 
+ 2224      666E6F2D 
+ 2225 0033 65782D6D 		.ascii	"ex-m4' '-mthumb' '-mfloat-abi=soft' '-march=armv7e-"
+ 2225      34272027 
+ 2225      2D6D7468 
+ 2225      756D6227 
+ 2225      20272D6D 
+ 2226 0066 6D272027 		.ascii	"m' '-O0' '-fomit-frame-pointer' '-falign-functions="
+ 2226      2D4F3027 
+ 2226      20272D66 
+ 2226      6F6D6974 
+ 2226      2D667261 
+ 2227 0099 31362720 		.ascii	"16' '-ffunction-sections' '-fdata-sections' '-fno-c"
+ 2227      272D6666 
+ 2227      756E6374 
+ 2227      696F6E2D 
+ 2227      73656374 
+ 2228 00cc 6F6D6D6F 		.ascii	"ommon' '-flto'\000"
+ 2228      6E272027 
+ 2228      2D666C74 
+ 2228      6F2700
+ 2229              		.text
+ 2230              		.comm	__gnu_lto_v1,1,1
+ 2231              		.comm	__gnu_lto_slim,1,1
+ 2232              		.ident	"GCC: (GNU Tools for Arm Embedded Processors 9-2019-q4-major) 9.2.1 20191025 (release) [ARM
+ARM GAS  C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s 			page 48
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 chtrace.c
+C:\Users\ecemi\AppData\Local\Temp\ccLF15Bh.s:35     .gnu.debuglto_.debug_info:00000000 chtrace.c.24cd0ab8
+                            *COM*:00000001 __gnu_lto_v1
+                            *COM*:00000001 __gnu_lto_slim
+
+NO UNDEFINED SYMBOLS
