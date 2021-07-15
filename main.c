@@ -44,6 +44,11 @@ int main(void) {
   if(err != MFS_NO_ERROR){chprintf(stream, "error creating record 1");}
   err = mfsReadRecord(&mfs1, 1, &size, mfs_buffer);
   if(err != MFS_NO_ERROR){chprintf(stream, "record not found");}
+  if(size != sizeof mfs_pattern16){chprintf(stream, "unexpected record length");}
+  if(memcmp(mfs_pattern16, mfs_buffer, size) != 0){chprintf(stream, "wrong record content");}
+  for(int i=0; i<16; i++){
+  chprintf(stream, "%d",mfs_buffer[i]);
+  }
   while (true) {
     if (!palReadLine(LINE_BUTTON)) {
       test_execute((BaseSequentialStream *)&SD2, &mfs_test_suite);
