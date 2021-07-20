@@ -39,7 +39,18 @@ int main(void) {
   mfs_error_t err;
   size_t size;
 
-      size = sizeof mfs_buffer;
+  //uint8_t buffer[10];
+
+  //uint8_t buffer = sdRead(&SD2, buffer, 10);
+  //chprintf(stream, "read:%c", buffer);
+
+  while(true){
+  uint8_t token = sdGet(&SD2);
+  sdPut(&SD2, (uint8_t)token);
+  int b = token - '0';
+  chprintf(stream, "b:%d",b);
+  }
+  /*size = sizeof mfs_buffer;
   err = mfsWriteRecord(&mfs1, 1, sizeof mfs_pattern16, mfs_pattern16);
   if(err != MFS_NO_ERROR){chprintf(stream, "error creating record 1");}
   err = mfsReadRecord(&mfs1, 1, &size, mfs_buffer);
@@ -55,7 +66,7 @@ int main(void) {
       test_execute((BaseSequentialStream *)&SD2, &mfs_test_suite);
     }
     chThdSleepMilliseconds(500);
-  }
+  }*/
 }
 
 
