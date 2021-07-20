@@ -14,19 +14,6 @@ const MFSConfig mfscfg1 = {
   .bank1_sectors    = 2U
 };
 
-static THD_WORKING_AREA(waThread1, 128);
-static THD_FUNCTION(Thread1, arg) {
-
-  (void)arg;
-  chRegSetThreadName("blinker");
-  while (true) {
-    palClearLine(LINE_LED_GREEN);
-    chThdSleepMilliseconds(500);
-    palSetLine(LINE_LED_GREEN);
-    chThdSleepMilliseconds(500);
-  }
-}
-
 int main(void) {
 
   halInit();
@@ -34,39 +21,48 @@ int main(void) {
   eflStart(&EFLD1, NULL);
   sdStart(&SD2, NULL);
   BaseSequentialStream *stream = (BaseSequentialStream *)&SD2;
-  chThdCreateStatic(waThread1, sizeof(waThread1), NORMALPRIO, Thread1, NULL);
+
   mfsStart(&mfs1, &mfscfg1);
   mfs_error_t err;
   size_t size;
 
-  //uint8_t buffer[10];
+  uint8_t buffer[3];
+  uint8_t buffer_new[3];
 
-  //uint8_t buffer = sdRead(&SD2, buffer, 10);
-  //chprintf(stream, "read:%c", buffer);
-
-  while(true){
-  uint8_t token = sdGet(&SD2);
-  sdPut(&SD2, (uint8_t)token);
-  int b = token - '0';
-  chprintf(stream, "b:%d",b);
+  for(int i=0; i<3; i++){
+   buffer[i] = sdGet(&SD2);
+   chprintf(stream, "%c", buffer[i]);
   }
-  /*size = sizeof mfs_buffer;
+
+    err = mfsWriteRecord(&mfs1, 1, sizeof buffer, buffer);
+    if(err != MFS_NO_ERROR){chprintf(stream, "error creating record");}
+
+    size = sizeof buffer_new;
+
+    err = mfsReadRecord(&mfs1, 1, &size, buffer_new);
+    if(err != MFS_NO_ERROR){chprintf(stream, "record not found");}
+    if(size != sizeof buffer){chprintf(stream, "unexpected record length");}
+    if(memcmp(buffer, buffer_new, size) != 0){chprintf(stream, "wrong record content");}
+
+
+  /*
   err = mfsWriteRecord(&mfs1, 1, sizeof mfs_pattern16, mfs_pattern16);
   if(err != MFS_NO_ERROR){chprintf(stream, "error creating record 1");}
   err = mfsReadRecord(&mfs1, 1, &size, mfs_buffer);
   if(err != MFS_NO_ERROR){chprintf(stream, "record not found");}
   if(size != sizeof mfs_pattern16){chprintf(stream, "unexpected record length");}
-  if(memcmp(mfs_pattern16, mfs_buffer, size) != 0){chprintf(stream, "wrong record content");}
+  if(memcmp(mfs_pattern16, mfs_buffer, size) != 0){chprintf(stream, "wrong record content");}*/
 
-  for(int i=0; i<16; i++){
-  chprintf(stream, "Buffer: %d",mfs_buffer[i]);
+  chprintf(stream, "buffer new: ");
+  for(int i=0; i<3; i++){
+  chprintf(stream, "%c",buffer_new[i]);
   }
   while (true) {
     if (!palReadLine(LINE_BUTTON)) {
       test_execute((BaseSequentialStream *)&SD2, &mfs_test_suite);
     }
     chThdSleepMilliseconds(500);
-  }*/
+  }
 }
 
 
