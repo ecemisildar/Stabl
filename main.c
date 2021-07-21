@@ -29,32 +29,73 @@ int main(void) {
   uint8_t buffer[3];
   uint8_t buffer_new[3];
 
-  chprintf(stream, "Enter the number: ");
-  for(int i=0; i<3; i++){
-   buffer[i] = sdGet(&SD2);
-   chprintf(stream, "%c", buffer[i]);
+  err = mfsReadRecord(&mfs1, 3, &size, buffer); //check there is a record
+  if(err != MFS_ERR_NOT_FOUND){
+
+  chprintf(stream, "record was already present\n ");
+  chprintf(stream, "Record: "); // print existing record
+    for(int i=0; i<3; i++){
+    chprintf(stream, "%c",buffer[i]);
+    }
+
+    chprintf(stream, "Do you want to erase this record? Y for yes, N for no\n");
+    if (sdGet(&SD2) == 'Y' || 'y') {
+      test_execute((BaseSequentialStream *)&SD2, &mfs_test_suite);
+      chprintf(stream, "Enter the number: "); // request a new record
+        for(int i=0; i<3; i++){
+         buffer[i] = sdGet(&SD2);
+         chprintf(stream, "%c", buffer[i]); // print buffer
+         }
+          err = mfsWriteRecord(&mfs1, 3, sizeof buffer, buffer); // write into buffer
+          if(err != MFS_NO_ERROR){chprintf(stream, "error creating record\n ");}
+
+          size = sizeof buffer_new;
+
+          err = mfsReadRecord(&mfs1, 3, &size, buffer_new); // read and take it into buffer_new
+          if(err != MFS_NO_ERROR){chprintf(stream, "record not found\n ");}
+          if(size != sizeof buffer){chprintf(stream, "unexpected record length\n ");}
+          if(memcmp(buffer, buffer_new, size) != 0){chprintf(stream, "wrong record content\n ");} // compare contents
+
+          else{
+          chprintf(stream, "buffer new: "); // wenn alles okay, print new buffer
+            for(int i=0; i<3; i++){
+            chprintf(stream, "%c",buffer_new[i]);
+            }
+          }
+    }
+
   }
-    err = mfsWriteRecord(&mfs1, 1, sizeof buffer, buffer);
-    if(err != MFS_NO_ERROR){chprintf(stream, "error creating record");}
+  else{ // if there is no record
+    chprintf(stream, "Enter the number: "); // request a new record
+      for(int i=0; i<3; i++){
+       buffer[i] = sdGet(&SD2);
+       chprintf(stream, "%c", buffer[i]); // print buffer
+      }
+        err = mfsWriteRecord(&mfs1, 3, sizeof buffer, buffer); // write into buffer
+        if(err != MFS_NO_ERROR){chprintf(stream, "error creating record\n ");}
 
-    size = sizeof buffer_new;
+        size = sizeof buffer_new;
 
-    err = mfsReadRecord(&mfs1, 1, &size, buffer_new);
-    if(err != MFS_NO_ERROR){chprintf(stream, "record not found");}
-    if(size != sizeof buffer){chprintf(stream, "unexpected record length");}
-    if(memcmp(buffer, buffer_new, size) != 0){chprintf(stream, "wrong record content");}
+        err = mfsReadRecord(&mfs1, 3, &size, buffer_new); // read and take it into buffer_new
+        if(err != MFS_NO_ERROR){chprintf(stream, "record not found\n ");}
+        if(size != sizeof buffer){chprintf(stream, "unexpected record length\n ");}
+        if(memcmp(buffer, buffer_new, size) != 0){chprintf(stream, "wrong record content\n ");} // compare contents
 
-
-  chprintf(stream, "buffer new: ");
-  for(int i=0; i<3; i++){
-  chprintf(stream, "%c",buffer_new[i]);
+        else{
+        chprintf(stream, "buffer new: "); // wenn alles okay, print new buffer
+          for(int i=0; i<3; i++){
+          chprintf(stream, "%c",buffer_new[i]);
+          }
+        }
   }
-  while (true) {
+
+
+ /*while (true) {
     if (!palReadLine(LINE_BUTTON)) {
       test_execute((BaseSequentialStream *)&SD2, &mfs_test_suite);
     }
     chThdSleepMilliseconds(500);
-  }
+  }*/
 }
 
 
