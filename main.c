@@ -14,12 +14,11 @@ const MFSConfig mfscfg1 = {
   .bank1_sectors    = 2U
 };
 BaseSequentialStream *stream = (BaseSequentialStream *)&SD2;
-
-
-
-
-void print_buffer(uint8_t b[]);
-void print_newBuffer(uint8_t b[]);
+uint8_t  buf[3] = "";
+uint8_t buffer[3] = "";
+uint8_t buffer_new[3] = "";
+uint8_t *print_buffer();
+void *print_newBuffer(uint8_t *b);
 void error_check(uint8_t *a, uint8_t *b);
 
 int main(void) {
@@ -32,8 +31,6 @@ int main(void) {
 
   mfs_error_t err;
   size_t size;
-  uint8_t buffer[3] = "";
-  uint8_t buffer_new[3] = "";
 
   size = sizeof buffer_new;
 
@@ -46,28 +43,30 @@ int main(void) {
     if (sdGet(&SD2) == 'Y') {
       err = mfsErase(&mfs1);
       if(err != MFS_NO_ERROR){chprintf(stream, "Storage erase error\n");}
-      print_buffer(buffer);
-      error_check(buffer, buffer_new);
+      buf  = print_buffer();
+      error_check(buf, buffer_new);
     }
   }
   else{ // if there is no record
-    print_buffer(buffer);
-    error_check(buffer, buffer_new);
+    buf  = print_buffer();
+    error_check(buf, buffer_new);
   }
 }
 
 
 /******************FUNCTIONS******************/
 
-void print_buffer(uint8_t *b){
+uint8_t * print_buffer(){
+  uint8_t b[3] = "";
   chprintf(stream, "Enter the number: "); // request a new record
   for(int i=0; i<3; i++){
    b[i] = sdGet(&SD2);
    chprintf(stream, "%c", b[i]); // print buffer
    }
   chprintf(stream, "\n");
+  return b;
 }
-void print_newBuffer(uint8_t *b){
+void *print_newBuffer(uint8_t *b){
   chprintf(stream, "New buffer: ");
   for(int i=0; i<3; i++){
    chprintf(stream, "%c", b[i]); // print new buffer
@@ -77,14 +76,22 @@ void print_newBuffer(uint8_t *b){
 
 void error_check(uint8_t *a, uint8_t *b){
   mfs_error_t err;
+  size_t size = sizeof b;
+  chprintf(stream, "b: %s");
     err = mfsWriteRecord(&mfs1, 3, sizeof a, a); // write into buffer
     if(err != MFS_NO_ERROR){chprintf(stream, "error creating record\n");}
-    err = mfsReadRecord(&mfs1, 3, sizeof b, b); // read and take it into buffer_new
+    err = mfsReadRecord(&mfs1, 3, &size, b); // read and take it into buffer_new
     if(err != MFS_NO_ERROR){chprintf(stream, "record not found\n");}
     if(sizeof b != sizeof a){chprintf(stream, "unexpected record length\n ");}
-    if(memcmp(a, b, sizeof b) != 0){chprintf(stream, "wrong record content\n");} // compare contents
-    else
-      print_newBuffer(b);
+    if(memcmp(a, b, size) != 0){chprintf(stream, "wrong record content\n");} // compare contents
+    else{
+      //print_newBuffer(b);
+    chprintf(stream, "New buffer: ");
+     for(int i=0; i<3; i++){
+      chprintf(stream, "%c", b[i]); // print new buffer
+      }
+     chprintf(stream, "\n");
+    }
 }
 
 
