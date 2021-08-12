@@ -17,7 +17,7 @@
  * @brief Set the number of phases, should be equal to the length of the enum
  * @todo code: Could be computed from the enum above
  */
-#define NUM_PHASES 3 //number of phases in inverter
+#define NUM_PHASES 3U //number of phases in inverter
 
 /**
  * @brief sets active phases by number, phases will be activated from bottom to top (activating only phase 2 isn't possible)
@@ -28,7 +28,7 @@
  * @brief number of modules per string, currently needs to be the same for all phases
  * @todo config,v3 what if different number of modules are used per phase?
  */
-#define NUM_MODULES 9//number of modules per phase
+#define NUM_MODULES 9 //number of modules per phase
 
 /**
  * @brief Defines which module type is active
@@ -65,13 +65,12 @@
 /**
  * @brief defines the max current that can be entered by the user, to be defined as a float
  */
-#define MAX_CURRENT 150.f
+#define MAX_CURRENT 150.01f
 
 /**
  * @brief defines the number of temperatures
  */
 #define NUM_TEMPERATURES 3
-
 
 #endif //MERGE3STRINGS_CONFIG_H
 

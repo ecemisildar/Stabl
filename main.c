@@ -3,6 +3,8 @@
 #include "hal_mfs.h"
 #include "chprintf.h"
 #include "mfs_test_root.h"
+#include "stablcfg.h"
+#include "user_configs.h"
 
 const MFSConfig mfscfg1 = {
         .flashp           = (BaseFlash *)&EFLD1,
@@ -34,8 +36,8 @@ int main(void) {
 
     size_t size_buffer;
     size_t size_buffer_new;
-    uint8_t buffer[3] = "";
-    uint8_t buffer_new[3] = "";
+    uint8_t buffer[10] = "";
+    uint8_t buffer_new[10] = "";
 
     size_buffer = sizeof buffer;
     size_buffer_new = sizeof buffer_new;
@@ -43,6 +45,9 @@ int main(void) {
     check_record(buffer, size_buffer, buffer_new, size_buffer_new); //check if there is an existing record
 }
 
+static int _set (user_commands_t cmd, uint8_t *buffer, uint8_t len ) {
+    return mfsWriteRecord(&mfs1, cmd, len, buffer); // write into buffer
+}
 
 /******************FUNCTIONS******************/
 
@@ -63,7 +68,14 @@ void check_record(uint8_t *a,size_t len_a, uint8_t *b,size_t len_b){
         if (sdGet(&SD2) == 'Y') {
             err = mfsErase(&mfs1); //erase old record
             if(err != MFS_NO_ERROR){chprintf(stream, "Storage erase error\n");}
-            write_buffer(a, len_a); //take input data from user and write it into memory
+            chprintf(stream, "Enter the number: "); // request a new record
+            for(int i=0; i<len_a ; i++){
+                a[i] = sdGet(&SD2);
+                chprintf(stream, "%c", a[i]); // print buffer
+            }
+            chprintf(stream, "\n");
+            _set (user_commands_t cmd, uint8_t *buffer, uint8_t len );
+//            write_buffer(a, len_a); //take input data from user and write it into memory
             read_buffer(b, len_b); //read data from the memory
         }
     }
@@ -75,10 +87,9 @@ void check_record(uint8_t *a,size_t len_a, uint8_t *b,size_t len_b){
 
 void write_buffer(uint8_t *a, size_t len_a){
     BaseSequentialStream *stream = (BaseSequentialStream *)&SD2;
-
     mfs_error_t err;
     chprintf(stream, "Enter the number: "); // request a new record
-    for(int i=0; i<3; i++){
+    for(int i=0; i<len_a ; i++){
         a[i] = sdGet(&SD2);
         chprintf(stream, "%c", a[i]); // print buffer
     }
@@ -96,15 +107,21 @@ void read_buffer(uint8_t *b, size_t len_b){
     if(err != MFS_NO_ERROR){chprintf(stream, "record not found\n");}
     else{
         chprintf(stream, "New buffer: ");
-        for(int i=0; i<3; i++){
+        for(int i=0; i<len_b; i++){
             chprintf(stream, "%c", b[i]); // print new buffer
         }
         chprintf(stream, "\n");
     }
 }
 
+static int _set (user_commands_t cmd, uint8_t *buffer, uint8_t len ) {
+    return mfsWriteRecord(&mfs1, cmd, len, buffer); // write into buffer
+}
 
 
-
+//static int _get(user_commands_t cmd, uint8_t *buffer, uint8_t len) {
+//    BaseSequentialStream *stream = (BaseSequentialStream *)&SD2;
+//    mfsReadRecord(&mfs1, cmd, &len, buffer);
+//}
 
 
