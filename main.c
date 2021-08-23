@@ -25,7 +25,6 @@ int main(void) {
   halInit();
   chSysInit();
   sdStart(&SD3, NULL);
-  //BaseSequentialStream *stream = (BaseSequentialStream *)&SD2;
   chprintf(stream, "Starting up \n");
 
   eflStart(&EFLD1, NULL);
