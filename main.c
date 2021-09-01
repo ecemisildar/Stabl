@@ -51,7 +51,7 @@ int main(void) {
 
 /******************FUNCTIONS******************/
 
-void past_records(uint8_t *a,size_t len_a){
+void past_records(uint8_t *a,size_t len_a){ //shows the past records in the memory
 
   mfs_error_t err;
   chprintf(stream, "Past Records \n");
@@ -68,7 +68,7 @@ void past_records(uint8_t *a,size_t len_a){
   chprintf(stream, "------------ \n");
 }
 
-void memory(uint8_t *a, size_t len_a, uint8_t *b, size_t len_b){
+void memory(uint8_t *a, size_t len_a, uint8_t *b, size_t len_b){ //select which memory ID will be used
   uint8_t id;
   chprintf(stream, "Which memory ID do you want to write? \n");
     id = sdGet(&SD3) - '0';
