@@ -51,12 +51,12 @@ int main(void) {
 
 /******************FUNCTIONS******************/
 
-void past_records(uint8_t *a,size_t len_a){ //shows the past records in the memory
+void past_records(uint8_t *a,size_t len_a){
 
   mfs_error_t err;
   chprintf(stream, "Past Records \n");
   chprintf(stream, "------------ \n");
-  for(int id=1; id<10; id++){
+  for(int id=1; id<=MFS_CFG_MAX_RECORDS; id++){
     err = mfsReadRecord(&mfs1, id, &len_a, a); //check all IDs
     chprintf(stream, "ID %d : ", id);
     for(int j=0; j<3; j++){
@@ -68,10 +68,10 @@ void past_records(uint8_t *a,size_t len_a){ //shows the past records in the memo
   chprintf(stream, "------------ \n");
 }
 
-void memory(uint8_t *a, size_t len_a, uint8_t *b, size_t len_b){ //select which memory ID will be used
+void memory(uint8_t *a, size_t len_a, uint8_t *b, size_t len_b){
   uint8_t id;
   chprintf(stream, "Which memory ID do you want to write? \n");
-    id = sdGet(&SD3) - '0';
+    id = 10*(sdGet(&SD3) - '0') + sdGet(&SD3) - '0';
     chprintf(stream, "ID: %d \n", id);
     check_record(id, a, len_a, b, len_b); //check if there is an existing record
 }
