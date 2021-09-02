@@ -97,13 +97,19 @@ void check_record(uint8_t id, uint8_t *a,size_t len_a, uint8_t *b,size_t len_b){
       }
       chprintf(stream, "\n");
 
-      chprintf(stream, "Do you want to erase this record? Y for yes, N for no\n");
+      chprintf(stream, "Do you want to erase this record? Y for yes, N for no \n");
       token = sdGet(&SD3);
       if (token == 'Y') {
         err = mfsEraseRecord(&mfs1, id); //erase old record
         if(err != MFS_NO_ERROR){chprintf(stream, "Storage erase error\n");}
-            write_buffer(id, a, len_a); //take input data from user and write it into memory
-            read_buffer(id, b, len_b); //read data from the memory
+            chprintf(stream, "Do you want to enter a new value? Y for yes, N for no \n");
+            if(sdGet(&SD3) == 'Y'){
+                write_buffer(id, a, len_a); //take input data from user and write it into memory
+                read_buffer(id, b, len_b); //read data from the memory
+            }
+            else{
+                chprintf(stream, "ID %d erased", id);
+            }
       }
       else if(token == 'N'){
           memory(a, len_a, b, len_b);
