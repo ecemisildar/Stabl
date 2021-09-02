@@ -51,7 +51,7 @@ int main(void) {
 
 /******************FUNCTIONS******************/
 
-void past_records(uint8_t *a,size_t len_a){
+void past_records(uint8_t *a,size_t len_a){ //shows the past records in the memory
 
   mfs_error_t err;
   chprintf(stream, "Past Records \n");
@@ -68,10 +68,18 @@ void past_records(uint8_t *a,size_t len_a){
   chprintf(stream, "------------ \n");
 }
 
-void memory(uint8_t *a, size_t len_a, uint8_t *b, size_t len_b){
+void memory(uint8_t *a, size_t len_a, uint8_t *b, size_t len_b){ //select which memory ID will be used
+
+  uint8_t first;
+  uint8_t second;
   uint8_t id;
   chprintf(stream, "Which memory ID do you want to write? \n");
-    id = 10*(sdGet(&SD3) - '0') + sdGet(&SD3) - '0';
+
+    first = sdGet(&SD3) - '0'; // first digit of the ID
+    second = sdGet(&SD3) - '0'; // second digit of the ID
+    if(first == 240){first = 0;} // if first digit is \n which makes 240 as char, we transform into 0
+    id = 10 * first + second; // add numbers and find the ID
+
     chprintf(stream, "ID: %d \n", id);
     check_record(id, a, len_a, b, len_b); //check if there is an existing record
 }
