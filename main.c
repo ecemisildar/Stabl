@@ -73,15 +73,20 @@ void memory(uint8_t *a, size_t len_a, uint8_t *b, size_t len_b){ //select which 
   uint8_t first;
   uint8_t second;
   uint8_t id;
-  chprintf(stream, "Which memory ID do you want to write? \n");
+  chprintf(stream, "Which memory ID do you want to write? (max 32) \n");
 
     first = sdGet(&SD3) - '0'; // first digit of the ID
     second = sdGet(&SD3) - '0'; // second digit of the ID
     if(first == 240){first = 0;} // if first digit is \n which makes 240 as char, we transform into 0
     id = 10 * first + second; // add numbers and find the ID
-
-    chprintf(stream, "ID: %d \n", id);
+    if(id<33 && id>0){
+    chprintf(stream, "ID: %d\n",id);
     check_record(id, a, len_a, b, len_b); //check if there is an existing record
+    }
+    else{
+      chprintf(stream, "wrong ID\n");
+      memory(a, len_a, b, len_b);
+    }
 }
 
 void check_record(uint8_t id, uint8_t *a,size_t len_a, uint8_t *b,size_t len_b){
